@@ -13,53 +13,53 @@
 		<title> Azira -  Premium dashboard ui bootstrap rwd admin html5 template </title>
 
 		<!--- Favicon --->
-		<link rel="icon" href="{{ asset('')}}/img/brand/favicon.png" type="image/x-icon"/>
+		<link rel="icon" href="{{ asset('assets')}}/img/brand/favicon.png" type="image/x-icon"/>
 
 		<!-- Bootstrap css -->
-		<link href="{{ asset('')}}/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" id="style"/>
+		<link href="{{ asset('assets')}}/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" id="style"/>
 
 		<!--- Icons css --->
-		<link href="{{ asset('')}}/css/icons.css" rel="stylesheet">
+		<link href="{{ asset('assets')}}/css/icons.css" rel="stylesheet">
 
 		<!--- Style css --->
-		<link href="{{ asset('')}}/css/style.css" rel="stylesheet">
-		<link href="{{ asset('')}}/css/plugins.css" rel="stylesheet">
+		<link href="{{ asset('assets')}}/css/style.css" rel="stylesheet">
+		<link href="{{ asset('assets')}}/css/plugins.css" rel="stylesheet">
 
 		<!--- Animations css --->
-		<link href="{{ asset('')}}/css/animate.css" rel="stylesheet">
+		<link href="{{ asset('assets')}}/css/animate.css" rel="stylesheet">
 
 	</head>
 	<body class="main-body  login-img">
 
 		<!-- Loader -->
 		<div id="global-loader">
-			<img src="{{ asset('')}}/img/loaders/loader-4.svg" class="loader-img" alt="Loader">
+			<img src="{{ asset('assets')}}/img/loaders/loader-4.svg" class="loader-img" alt="Loader">
 		</div>
 		<!-- /Loader -->
 
         @yield('content')
 
-        <script src="{{ asset('')}}/plugins/jquery/jquery.min.js"></script>
+        <script src="{{ asset('assets')}}/plugins/jquery/jquery.min.js"></script>
 		<!--- JQuery min js --->
 
 		<!--- Bootstrap Bundle js --->
-		<script src="{{ asset('')}}/plugins/bootstrap/popper.min.js"></script>
-		<script src="{{ asset('')}}/plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="{{ asset('assets')}}/plugins/bootstrap/popper.min.js"></script>
+		<script src="{{ asset('assets')}}/plugins/bootstrap/js/bootstrap.min.js"></script>
 
 		<!--- Ionicons js --->
-		<script src="{{ asset('')}}/plugins/ionicons/ionicons.js"></script>
+		<script src="{{ asset('assets')}}/plugins/ionicons/ionicons.js"></script>
 
 		<!--- Moment js --->
-		<script src="{{ asset('')}}/plugins/moment/moment.js"></script>
+		<script src="{{ asset('assets')}}/plugins/moment/moment.js"></script>
 
 		<!--- Eva-icons js --->
-		<script src="{{ asset('')}}/js/eva-icons.min.js"></script>
+		<script src="{{ asset('assets')}}/js/eva-icons.min.js"></script>
 
 		<!--themecolor js-->
-		<script src="{{ asset('')}}/js/themecolor.js"></script>
+		<script src="{{ asset('assets')}}/js/themecolor.js"></script>
 
 		<!--- Custom js --->
-		<script src="{{ asset('')}}/js/custom.js"></script>
+		<script src="{{ asset('assets')}}/js/custom.js"></script>
 
 	</body>
 </html>
