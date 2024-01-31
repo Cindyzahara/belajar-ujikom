@@ -172,7 +172,7 @@
 						<div class="slide-left disabled" id="slide-left"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"/></svg></div>
 						<ul class="side-menu ">
 							<li class="slide">
-								<a class="side-menu__item" href="dashboard"><i class="side-menu__icon fe fe-airplay"></i><span class="side-menu__label">Dashboard</span></a>
+								<a class="side-menu__item" href="index.html"><i class="side-menu__icon fe fe-airplay"></i><span class="side-menu__label">Dashboard</span></a>
 							</li>
 							<li class="slide">
 								<a class="side-menu__item" data-bs-toggle="slide"   href="javascript:void(0);"><i class="side-menu__icon fe fe-box"></i><span class="side-menu__label">Data Buku</span><i class="angle fe fe-chevron-down"></i></a>
@@ -351,96 +351,99 @@
 
 						<!-- row -->
 						<div class="row row-sm ">
-							<div class="col-md-12 col-xl-12">
-								<div class="card overflow-hidden review-project">
-									<div class="card-body">
+							<div class="col-xl-8 col-lg-12 col-md-12 col-sm-12">
+								<div class="card overflow-hidden">
+									<div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
 										<div class="d-flex justify-content-between">
-											<h4 class="card-title mg-b-10">Data Pengguna</h4>
+											<h4 class="card-title mg-b-10">Project Budget</h4>
 											<i class="mdi mdi-dots-horizontal text-gray"></i>
 										</div>
-										<p class="tx-12 text-muted mb-3">A project is an activity to meet the creation of a unique product or service and thus activities that are undertaken to accomplish routine activities cannot be considered projects. <a href="">Learn more</a></p>
-										<div class="table-responsive mb-0">
-											<table class="table table-hover table-bordered mb-0 text-md-nowrap text-lg-nowrap text-xl-nowrap table-striped ">
+										<p class="tx-12 text-muted mb-2">The Project Budget is a tool used by project managers to estimate the total cost of a project. <a href="">Learn more</a></p>
+									</div>
+									<div class="card-body pd-y-7">
+										<div class="area chart-legend mb-0">
+											<div>
+												<i class="mdi mdi-album text-primary me-2"></i> Total Budget
+											</div>
+											<div>
+												<i class="mdi mdi-album text-pink me-2"></i>Amount Used
+											</div>
+										</div>
+										<canvas id="project-budget" class="ht-300"></canvas>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+								<div class="card overflow-hidden">
+									<div class="card-body pb-3">
+										<div class="d-flex justify-content-between">
+											<h4 class="card-title mg-b-10">project &amp; task</h4>
+											<i class="mdi mdi-dots-horizontal text-gray"></i>
+										</div>
+										<p class="tx-12 text-muted mb-3">In project, a task is an activity that needs to be accomplished within a defined period of time or by a deadline. <a href="">Learn more</a></p>
+										<div class="table-responsive mb-0 projects-stat tx-14">
+											<table class="table table-hover table-bordered mb-0 text-md-nowrap text-lg-nowrap text-xl-nowrap  ">
 												<thead>
 													<tr>
-														<th>Project</th>
-														<th>Team Members</th>
-														<th>Categorie</th>
-														<th>Created</th>
+														<th>Project &amp; Task</th>
 														<th>Status</th>
-														<th>Deadline</th>
 													</tr>
 												</thead>
 												<tbody>
 													<tr>
 														<td>
-															<div class="project-contain">
-																<h6 class="mb-1 tx-13">Angular Project</h6>
+															<div class="project-names">
+																<h6 class="bg-primary-transparent text-primary d-inline-block me-2 text-center">U</h6>
+																<p class="d-inline-block font-weight-semibold mb-0">UI Design</p>
 															</div>
 														</td>
 														<td>
-															<div class="image-grouped"><img class="profile-img brround" alt="profile image" src="../assets/img/faces/11.jpg"><img class="profile-img brround " alt="profile image" src="../assets/img/faces/12.jpg"><img class="profile-img brround" alt="profile image" src="../assets/img/faces/2.jpg"></div>
+															<div class="badge bg-success">Completed</div>
 														</td>
-														<td>Web Design</td>
-														<td>01 Jan 2020</td>
-														<td><span class="badge bg-primary-gradient">Ongoing</span></td>
-														<td>15 March 2020</td>
 													</tr>
 													<tr>
 														<td>
-															<div class="project-contain">
-																<h6 class="mb-1 tx-13">PHP Project</h6>
+															<div class="project-names">
+																<h6 class="bg-pink-transparent text-pink d-inline-block text-center me-2">R</h6>
+																<p class="d-inline-block font-weight-semibold mb-0">Landing Page</p>
 															</div>
 														</td>
 														<td>
-															<div class="image-grouped"><img class="profile-img brround" alt="profile image" src="../assets/img/faces/16.jpg"><img class="profile-img brround " alt="profile image" src="../assets/img/faces/8.jpg"><img class="profile-img brround" alt="profile image" src="../assets/img/faces/7.jpg"></div>
+															<div class="badge bg-warning">Pending</div>
 														</td>
-														<td>Web Development</td>
-														<td>03 March 2020</td>
-														<td><span class="badge bg-success-gradient">Ongoing</span></td>
-														<td>15 Jun 2020</td>
 													</tr>
 													<tr>
 														<td>
-															<div class="project-contain">
-																<h6 class="mb-1 tx-13">Python</h6>
+															<div class="project-names">
+																<h6 class="bg-success-transparent text-success d-inline-block me-2 text-center">W</h6>
+																<p class="d-inline-block font-weight-semibold mb-0">Website &amp; Blog</p>
 															</div>
 														</td>
 														<td>
-															<div class="image-grouped"><img class="profile-img brround" alt="profile image" src="../assets/img/faces/3.jpg"><img class="profile-img brround " alt="profile image" src="../assets/img/faces/12.jpg"><img class="profile-img brround" alt="profile image" src="../assets/img/faces/15.jpg"></div>
+															<div class="badge bg-danger">Canceled</div>
 														</td>
-														<td>Web Development</td>
-														<td>15 March 2020</td>
-														<td><span class="badge bg-danger-gradient">Pending</span></td>
-														<td>15 March 2020</td>
 													</tr>
 													<tr>
 														<td>
-															<div class="project-contain">
-																<h6 class="mb-1 tx-13">Android App</h6>
+															<div class="project-names">
+																<h6 class="bg-purple-transparent text-purple d-inline-block me-2 text-center">P</h6>
+																<p class="d-inline-block font-weight-semibold mb-0">Product Development</p>
 															</div>
 														</td>
 														<td>
-															<div class="image-grouped"><img class="profile-img brround" alt="profile image" src="../assets/img/faces/7.jpg"><img class="profile-img brround " alt="profile image" src="../assets/img/faces/6.jpg"><img class="profile-img brround" alt="profile image" src="../assets/img/faces/16.jpg"></div>
+															<div class="badge bg-teal">on-going</div>
 														</td>
-														<td>Android</td>
-														<td>15 March 2020</td>
-														<td><span class="badge bg-success-gradient">Ongoing</span></td>
-														<td>15 March 2020</td>
 													</tr>
 													<tr>
 														<td>
-															<div class="project-contain">
-																<h6 class="mb-1 tx-13">Mobile Application</h6>
+															<div class="project-names">
+																<h6 class="bg-danger-transparent text-danger d-inline-block me-2 text-center">L</h6>
+																<p class="d-inline-block font-weight-semibold mb-0">Logo Design</p>
 															</div>
 														</td>
 														<td>
-															<div class="image-grouped"><img class="profile-img brround" alt="profile image" src="../assets/img/faces/8.jpg"><img class="profile-img brround " alt="profile image" src="../assets/img/faces/11.jpg"><img class="profile-img brround" alt="profile image" src="../assets/img/faces/15.jpg"></div>
+															<div class="badge bg-success">Completed</div>
 														</td>
-														<td>Android</td>
-														<td>15 March 2020</td>
-														<td><span class="badge bg-pink-gradient">Ongoing</span></td>
-														<td>15 March 2020</td>
 													</tr>
 												</tbody>
 											</table>
