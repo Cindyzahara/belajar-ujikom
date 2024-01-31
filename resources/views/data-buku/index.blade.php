@@ -45,6 +45,7 @@
                         <a class="open-toggle"   href="javascript:void(0);"><i class="header-icons" data-eva="menu-outline"></i></a>
                         <a class="close-toggle"   href="javascript:void(0);"><i class="header-icons" data-eva="close-outline"></i></a>
                     </div>
+<<<<<<< HEAD
                     <div class="responsive-logo">
                         <a href="/" class="header-logo"><img src="{{asset('')}}back/img/brand/logo.png" class="logo-11"></a>
                         <a href="/" class="header-logo"><img src="{{asset('')}}back/img/brand/logo-white.png" class="logo-1"></a>
@@ -93,6 +94,24 @@
                                             <h6>hello</h6>
                                             <span>hay</span>
     
+=======
+                    <p class="tx-12 text-muted mb-3">A project is an activity to meet the creation of a unique product or service and thus activities that are undertaken to accomplish routine activities cannot be considered projects. <a href="">Learn more</a></p>
+                    <div class="table-responsive mb-0">
+                        <table class="table table-hover table-bordered mb-0 text-md-nowrap text-lg-nowrap text-xl-nowrap table-striped ">
+                            <thead>
+                                <tr>
+                                    <th>Judul buku</th>
+                                    <th>Penulis</th>
+                                    <th>Penerbit</th>
+                                    <th>Tahun Terbit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="project-contain">
+                                            <h6 class="mb-1 tx-13">Angular Project</h6>
+>>>>>>> 675cc0fb05c336384330aa8ad32cd25d3064d034
                                         </div>
                                         <!-- <a class="dropdown-item" href=""><i class="far fa-user"></i> My Profile</a>
                                         <a class="dropdown-item" href=""><i class="far fa-clock"></i> Activity Logs</a> -->
