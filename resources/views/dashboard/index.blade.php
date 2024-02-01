@@ -178,6 +178,7 @@
 								<a class="side-menu__item" data-bs-toggle="slide"   href="javascript:void(0);"><i class="side-menu__icon fe fe-box"></i><span class="side-menu__label">Data Buku</span><i class="angle fe fe-chevron-down"></i></a>
 								<ul class="slide-menu">
 									<li class="side-menu__label1"><a href="javascript:void(0);">Data Buku</a></li>
+									<li><a class="slide-item" href="">Buku</a></li>
 									<li><a class="slide-item" href="">Kategori Buku</a></li>
 									<li><a class="slide-item" href="">Koleksi Pribadi</a></li>
 									<li><a class="slide-item" href="">Ulasan Buku</a></li>

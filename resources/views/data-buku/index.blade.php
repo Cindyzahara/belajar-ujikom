@@ -1,3 +1,5 @@
+{{-- @extends('template_back.content')
+@section('content') --}}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +47,6 @@
                         <a class="open-toggle"   href="javascript:void(0);"><i class="header-icons" data-eva="menu-outline"></i></a>
                         <a class="close-toggle"   href="javascript:void(0);"><i class="header-icons" data-eva="close-outline"></i></a>
                     </div>
-<<<<<<< HEAD
                     <div class="responsive-logo">
                         <a href="/" class="header-logo"><img src="{{asset('')}}back/img/brand/logo.png" class="logo-11"></a>
                         <a href="/" class="header-logo"><img src="{{asset('')}}back/img/brand/logo-white.png" class="logo-1"></a>
@@ -94,24 +95,6 @@
                                             <h6>hello</h6>
                                             <span>hay</span>
     
-=======
-                    <p class="tx-12 text-muted mb-3">A project is an activity to meet the creation of a unique product or service and thus activities that are undertaken to accomplish routine activities cannot be considered projects. <a href="">Learn more</a></p>
-                    <div class="table-responsive mb-0">
-                        <table class="table table-hover table-bordered mb-0 text-md-nowrap text-lg-nowrap text-xl-nowrap table-striped ">
-                            <thead>
-                                <tr>
-                                    <th>Judul buku</th>
-                                    <th>Penulis</th>
-                                    <th>Penerbit</th>
-                                    <th>Tahun Terbit</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="project-contain">
-                                            <h6 class="mb-1 tx-13">Angular Project</h6>
->>>>>>> 675cc0fb05c336384330aa8ad32cd25d3064d034
                                         </div>
                                         <!-- <a class="dropdown-item" href=""><i class="far fa-user"></i> My Profile</a>
                                         <a class="dropdown-item" href=""><i class="far fa-clock"></i> Activity Logs</a> -->
@@ -140,7 +123,7 @@
 		<!-- page -->
 	   <div class="page custom-index">
 
-			<!-- main-sidebar -->
+        	<!-- main-sidebar -->
 			<div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
 			<div class="sticky">
 				<aside class="app-sidebar sidebar-scroll">
@@ -191,12 +174,13 @@
 						<div class="slide-left disabled" id="slide-left"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"/></svg></div>
 						<ul class="side-menu ">
 							<li class="slide">
-								<a class="side-menu__item" href="dashboard"><i class="side-menu__icon fe fe-airplay"></i><span class="side-menu__label">Dashboard</span></a>
+								<a class="side-menu__item" href="index.html"><i class="side-menu__icon fe fe-airplay"></i><span class="side-menu__label">Dashboard</span></a>
 							</li>
 							<li class="slide">
 								<a class="side-menu__item" data-bs-toggle="slide"   href="javascript:void(0);"><i class="side-menu__icon fe fe-box"></i><span class="side-menu__label">Data Buku</span><i class="angle fe fe-chevron-down"></i></a>
 								<ul class="slide-menu">
 									<li class="side-menu__label1"><a href="javascript:void(0);">Data Buku</a></li>
+									<li><a class="slide-item" href="">Buku</a></li>
 									<li><a class="slide-item" href="">Kategori Buku</a></li>
 									<li><a class="slide-item" href="">Koleksi Pribadi</a></li>
 									<li><a class="slide-item" href="">Ulasan Buku</a></li>
@@ -236,7 +220,7 @@
 
 					<!-- main-content-body -->
 					<div class="main-content-body">
-						<div class="row row-sm">
+						{{-- <div class="row row-sm">
 							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
 								<div class="card overflow-hidden project-card">
 									<div class="card-body">
@@ -358,7 +342,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> --}}
 
 						<!-- row -->
 						
@@ -374,93 +358,26 @@
 								<div class="card overflow-hidden review-project">
 									<div class="card-body">
 										<div class="d-flex justify-content-between">
-											<h4 class="card-title mg-b-10">Data Pengguna</h4>
+											<h4 class="card-title mg-b-10">Data Buku</h4>
 											<i class="mdi mdi-dots-horizontal text-gray"></i>
 										</div>
-										<p class="tx-12 text-muted mb-3">A project is an activity to meet the creation of a unique product or service and thus activities that are undertaken to accomplish routine activities cannot be considered projects. <a href="">Learn more</a></p>
 										<div class="table-responsive mb-0">
 											<table class="table table-hover table-bordered mb-0 text-md-nowrap text-lg-nowrap text-xl-nowrap table-striped ">
 												<thead>
 													<tr>
-														<th>Project</th>
-														<th>Team Members</th>
-														<th>Categorie</th>
-														<th>Created</th>
-														<th>Status</th>
-														<th>Deadline</th>
+														<th>Judul</th>
+														<th>Penulis</th>
+														<th>Penerbit</th>
+														<th>Tahun Terbit</th>
 													</tr>
 												</thead>
 												<tbody>
-													<tr>
-														<td>
-															<div class="project-contain">
-																<h6 class="mb-1 tx-13">Angular Project</h6>
-															</div>
-														</td>
-														<td>
-															<div class="image-grouped"><img class="profile-img brround" alt="profile image" src="../assets/img/faces/11.jpg"><img class="profile-img brround " alt="profile image" src="../assets/img/faces/12.jpg"><img class="profile-img brround" alt="profile image" src="../assets/img/faces/2.jpg"></div>
-														</td>
-														<td>Web Design</td>
-														<td>01 Jan 2020</td>
-														<td><span class="badge bg-primary-gradient">Ongoing</span></td>
-														<td>15 March 2020</td>
-													</tr>
-													<tr>
-														<td>
-															<div class="project-contain">
-																<h6 class="mb-1 tx-13">PHP Project</h6>
-															</div>
-														</td>
-														<td>
-															<div class="image-grouped"><img class="profile-img brround" alt="profile image" src="../assets/img/faces/16.jpg"><img class="profile-img brround " alt="profile image" src="../assets/img/faces/8.jpg"><img class="profile-img brround" alt="profile image" src="../assets/img/faces/7.jpg"></div>
-														</td>
-														<td>Web Development</td>
-														<td>03 March 2020</td>
-														<td><span class="badge bg-success-gradient">Ongoing</span></td>
-														<td>15 Jun 2020</td>
-													</tr>
-													<tr>
-														<td>
-															<div class="project-contain">
-																<h6 class="mb-1 tx-13">Python</h6>
-															</div>
-														</td>
-														<td>
-															<div class="image-grouped"><img class="profile-img brround" alt="profile image" src="../assets/img/faces/3.jpg"><img class="profile-img brround " alt="profile image" src="../assets/img/faces/12.jpg"><img class="profile-img brround" alt="profile image" src="../assets/img/faces/15.jpg"></div>
-														</td>
-														<td>Web Development</td>
-														<td>15 March 2020</td>
-														<td><span class="badge bg-danger-gradient">Pending</span></td>
-														<td>15 March 2020</td>
-													</tr>
-													<tr>
-														<td>
-															<div class="project-contain">
-																<h6 class="mb-1 tx-13">Android App</h6>
-															</div>
-														</td>
-														<td>
-															<div class="image-grouped"><img class="profile-img brround" alt="profile image" src="../assets/img/faces/7.jpg"><img class="profile-img brround " alt="profile image" src="../assets/img/faces/6.jpg"><img class="profile-img brround" alt="profile image" src="../assets/img/faces/16.jpg"></div>
-														</td>
-														<td>Android</td>
-														<td>15 March 2020</td>
-														<td><span class="badge bg-success-gradient">Ongoing</span></td>
-														<td>15 March 2020</td>
-													</tr>
-													<tr>
-														<td>
-															<div class="project-contain">
-																<h6 class="mb-1 tx-13">Mobile Application</h6>
-															</div>
-														</td>
-														<td>
-															<div class="image-grouped"><img class="profile-img brround" alt="profile image" src="../assets/img/faces/8.jpg"><img class="profile-img brround " alt="profile image" src="../assets/img/faces/11.jpg"><img class="profile-img brround" alt="profile image" src="../assets/img/faces/15.jpg"></div>
-														</td>
-														<td>Android</td>
-														<td>15 March 2020</td>
-														<td><span class="badge bg-pink-gradient">Ongoing</span></td>
-														<td>15 March 2020</td>
-													</tr>
+                                                    <tr>
+                                                        <td>Si Kancil</td>
+                                                        <td>Cindy</td>
+                                                        <td>Grand Media</td>
+                                                        <td>2011</td>
+                                                    </tr>
 												</tbody>
 											</table>
 										</div>
