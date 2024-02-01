@@ -13,13 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/template', function () {
+Route::get('/', function () {
     return view('template_back/layout');
 });
-Route::get('/', function () {
-    return view('data-buku/index');
-});
-Route::get('/dashboard', function () {
-    return view('dashboard/index');
-});
-
