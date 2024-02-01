@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\KategoriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,4 @@ Route::get('/dashboard', function () {
 });
 
 Route::get('/data-buku', [BukuController::class, 'index'])->name('data-buku');
+Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori');
