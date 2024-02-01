@@ -15,15 +15,15 @@ use App\Http\Controllers\KategoriController;
 |
 */
 
-Route::get('/', function () {
-    return view('template_back/layout');
-});
-Route::get('/', function () {
-    return view('data-buku/index');
-});
+// Route::get('/', function () {
+//     return view('template_back/layout');
+// });
+// Route::get('/', function () {
+//     return view('data-buku/index');
+// });
 Route::get('/dashboard', function () {
     return view('dashboard/index');
 });
 
-Route::get('/data-buku', [BukuController::class, 'index'])->name('data-buku');
+Route::get('/', [BukuController::class, 'index'])->name('data-buku');
 Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori');
