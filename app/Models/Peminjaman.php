@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Peminjaman extends Model
 {
-    use HasFactory;
+    protected $table = "users";
+    protected $guarded = ['id'];
 }
