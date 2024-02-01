@@ -15,12 +15,10 @@
                         <table class="table table-hover table-bordered mb-0 text-md-nowrap text-lg-nowrap text-xl-nowrap table-striped ">
                             <thead>
                                 <tr>
-                                    <th>Project</th>
-                                    <th>Team Members</th>
-                                    <th>Categorie</th>
-                                    <th>Created</th>
-                                    <th>Status</th>
-                                    <th>Deadline</th>
+                                    <th>Judul buku</th>
+                                    <th>Penulis</th>
+                                    <th>Penerbit</th>
+                                    <th>Tahun Terbit</th>
                                 </tr>
                             </thead>
                             <tbody>
