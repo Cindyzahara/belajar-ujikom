@@ -17,5 +17,3 @@ Route::get('/', function () {
     return view('template_back/layout');
 });
 
-
-// Route::get('/', [LoginController::class, 'index']);
