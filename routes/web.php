@@ -23,5 +23,8 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard/index');
 });
+Route::get('/dashboard', function () {
+    return view('dashboard/index');
+});
 
 Route::get('/data-buku', [BukuController::class, 'index'])->name('data-buku');
