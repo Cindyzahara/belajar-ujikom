@@ -46,7 +46,6 @@ class BukuController extends Controller
         // dd($request->all());
         Buku::create([
             'judul' => $request->judul,
-            'kategori_id' => $request->kategori_id,
             'penulis' => $request->penulis,
             'penerbit' => $request->penerbit,
             'tahun_terbit' => $request->tahun_terbit,

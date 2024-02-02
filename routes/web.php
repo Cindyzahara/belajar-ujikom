@@ -17,18 +17,18 @@ use App\Http\Controllers\UlasanBukuController;
 |
 */
 
-Route::get('/', function () {
-    return view('template_back/layout');
-});
-Route::get('/', function () {
-    return view('data-buku/index');
-});
+// Route::get('/', function () {
+//     return view('template_back/layout');
+// });
+// Route::get('/', function () {
+//     return view('data-buku/index');
+// });
 // Route::get('/dashboard', function () {
 //     return view('dashboard/index');
 // });
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('/data-buku', [BukuController::class, 'index'])->name('data-buku');
+Route::get('/', [BukuController::class, 'index'])->name('data-buku');
 Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori');
 Route::get('/data-buku/input', [BukuController::class, 'input'])->name('data-buku/input');
 Route::get('/ulasanBuku', [UlasanBukuController::class, 'index'])->name('ulasanBuku');
