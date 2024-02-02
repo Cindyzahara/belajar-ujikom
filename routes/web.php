@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BukuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('template_back/layout');
 });
+Route::get('/', function () {
+    return view('data-buku/index');
+});
+Route::get('/dashboard', function () {
+    return view('dashboard/index');
+});
+
+Route::get('/data-buku', [BukuController::class, 'index'])->name('data-buku');

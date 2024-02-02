@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-
-class BukuController extends Controller
+class KategoriController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class BukuController extends Controller
      */
     public function index()
     {
-        return view('data-buku.index');
+        //
     }
 
     /**
