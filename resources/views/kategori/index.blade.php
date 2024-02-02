@@ -10,25 +10,20 @@
                 <div class="card overflow-hidden review-project">
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
-                            <h4 class="card-title mg-b-10">Data Buku</h4>
+                            <h4 class="card-title mg-b-10">Kategori Buku</h4>
                             <i class="mdi mdi-dots-horizontal text-gray"></i>
                         </div>
                         <div class="table-responsive mb-0">
                             <table class="table table-hover table-bordered mb-0 text-md-nowrap text-lg-nowrap text-xl-nowrap table-striped ">
                                 <thead>
                                     <tr>
-                                        <th>Judul</th>
-                                        <th>Penulis</th>
-                                        <th>Penerbit</th>
-                                        <th>Tahun Terbit</th>
+                                        <th>Nama Kategori</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>Si Kancil</td>
-                                        <td>Cindy</td>
-                                        <td>Grand Media</td>
-                                        <td>2011</td>
                                     </tr>
                                 </tbody>
                             </table>
