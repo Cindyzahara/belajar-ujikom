@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Buku;
+use App\Models\UlasanBuku;
 
 
-class BukuController extends Controller
+class UlasanBukuController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,15 +15,8 @@ class BukuController extends Controller
      */
     public function index()
     {
-        $buku = Buku::all();
-        return view('data-buku.index', compact('buku'));
+        return view('ulasan_buku.index');
     }
-
-    public function input(Request $request)
-    {
-        return view("data-buku.formInput");
-    }
-
 
     /**
      * Show the form for creating a new resource.
@@ -43,16 +36,7 @@ class BukuController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
-        Buku::create([
-            'judul' => $request->judul,
-            'kategori_id' => $request->kategori_id,
-            'penulis' => $request->penulis,
-            'penerbit' => $request->penerbit,
-            'tahun_terbit' => $request->tahun_terbit,
-        ]);
-
-        return redirect()->route('data-buku');
+        //
     }
 
     /**
