@@ -5,12 +5,12 @@
  <!-- breadcrumb -->
  <div class="breadcrumb-header justify-content-between">
     <div>
-        <h4 class="content-title mb-2">Form Data Buku</h4>
+        <h4 class="content-title mb-2">Form Data peminjaman</h4>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="{{route('data-buku')}}">Data buku</a></li>
-                <li class="breadcrumb-item text-white active">Form Data Buku</li>
+                <li class="breadcrumb-item"><a href="{{route('data-peminjaman')}}">Data peminjaman</a></li>
+                <li class="breadcrumb-item text-white active">Form Data Peminjaman</li>
             </ol>
         </nav>
     </div>
@@ -24,11 +24,11 @@
             <div class="pd-t-10 pd-s-10 pd-e-10 bg-white bd-b">
                 <div class="row">
                     <div class="col-md-6">
-                        <h4 class="card-title mg-b-10">Data Buku</h4>
+                        <h4 class="card-title mg-b-10">Data peminjaman</h4>
                     </div>
                     <div class="col-md-6">
                         <div class="d-flex my-auto btn-list justify-content-end">
-                            <a href="{{ route('data-buku/input')}}" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah</a>
+                            <a href="{{ route('data-peminjaman/input')}}" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah</a>
                              <button onclick="formImport()" class="btn btn-sm btn-secondary"><i class="fa fa-upload me-2"></i> Import</button>
                             <div class="dropdown">
                                 <button type="button" class="btn btn-sm btn-success dropdown-toggle" data-bs-toggle="dropdown">
@@ -48,35 +48,45 @@
                 @include('_component.message')
                 <div class="row">
                     <div class="col-md-3">
-                        <label class="form-label mt-2 mb-0">Hak Akses</label> 
+                        <label class="form-label mt-2 mb-0">Kategori Buku</label> 
                         <select id="f1" class="form-control select2" onchange="reload_table()">
+                            @php $db = DB::table('buku')->select('*')->orderBy('judul','ASC')->get(); @endphp
                             <option value="">=== semua ===</option>
-                            <option value="1" @if(request()->get('f1')==1) selected @endif>administrator</option>
-                            <option value="2" @if(request()->get('f1')==2) selected @endif>operator</option>
+                            @foreach($db as $key => $val)
+                            <option value="{{$val->id}}" @if(request()->get('f1')==$val->id) selected @endif>{{$val->judul}}</option>
+                            @endforeach
                         </select>
                     </div>
-                </div>
                 <hr>
                 <div class="table-responsive">
                     <table id="tbl_list" class="table table-sm table-striped table-bordered tx-14" width="100%">
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Judul</th>
-                                <th>Penulis</th>
-                                <th>Penerbit</th>
-                                <th>Tahun Terbit</th>
+                                <th>Nama</th>
+                                <th>Buku</th>
+                                <th>Tanggal Peminjaman</th>
+                                <th>Tanggal Pengembalian</th>
+                                <th>Status Peminjaman</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($buku as $item)
+                            {{-- @php $no=1; @endphp --}}
+                            @foreach ($peminjaman as $item)
+                            {{-- @php 
+                             $peminjaman = DB::table('users')->select('*')->orderBy('username','ASC')->get(); 
+                            @endphp --}}
+                            {{-- @php 
+                             $buku = DB::table('buku')->select('*')->orderBy('judul','ASC')->get(); 
+                            @endphp --}}
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $item->judul}}</td>
-                                <td>{{ $item->penulis}}</td>
-                                <td>{{ $item->penerbit}}</td>
-                                <td>{{ $item->tahun_terbit}}</td>
+                                <td>{{$item->user_id}}</td>
+                                <td>{{$item->buku_id}}</td>
+                                <td>{{ $item->TaggalPeminjaman}}</td>
+                                <td>{{ $item->TaggalPengembalian}}</td>
+                                <td>{{ $item->StatusPeminjaman}}</td>
                                 <td>
                                     <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="" method="POST">
                                         @csrf

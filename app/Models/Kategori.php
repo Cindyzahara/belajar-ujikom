@@ -7,6 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kategori extends Model
 {
-    protected $table = "kategoribuku";
-    protected $guarded = ['id'];
+    protected $table = "kategoriBuku";
+    protected $primaryKey = "id";
+    protected $fillable = [
+        'id','nama_kategori'
+    ];
+
+    public function kategoriRelasi() 
+    {
+        return $this->hasMany(KategoriRelasi::class);
+    }
 }

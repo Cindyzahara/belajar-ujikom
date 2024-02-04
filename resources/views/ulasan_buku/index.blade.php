@@ -10,20 +10,23 @@
                 <div class="card overflow-hidden review-project">
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
-                            <h4 class="card-title mg-b-10">Koleksi Pribadi </h4>
+                            <h4 class="card-title mg-b-10">Ulasan Buku</h4>
                             <i class="mdi mdi-dots-horizontal text-gray"></i>
                         </div>
                         <div class="table-responsive mb-0">
                             <table class="table table-hover table-bordered mb-0 text-md-nowrap text-lg-nowrap text-xl-nowrap table-striped ">
                                 <thead>
                                     <tr>
-                                        <th></th>
-                                        <th>Action</th>
+                                        <th>No</th>
+                                        <th>User</th>
+                                        <th>Buku</th>
+                                        <th>Ulasan</th>
+                                        <th>Rating</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Si Kancil</td>
+                                        <td></td>
                                     </tr>
                                 </tbody>
                             </table>

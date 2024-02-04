@@ -1,120 +1,44 @@
-{{-- @extends('template_back.content')
-@section('content') --}}
+@extends('template_back.layout')
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
+@section('isi')
 
-		<meta charset="UTF-8">
-		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
-		<meta name="Author" content="Spruko Technologies Private Limited">
-		<meta name="Keywords" content="admin,admin dashboard,admin dashboard template,admin panel template,admin template,admin theme,bootstrap 4 admin template,bootstrap 4 dashboard,bootstrap admin,bootstrap admin dashboard,bootstrap admin panel,bootstrap admin template,bootstrap admin theme,bootstrap dashboard,bootstrap form template,bootstrap panel,bootstrap ui kit,dashboard bootstrap 4,dashboard design,dashboard html,dashboard template,dashboard ui kit,envato templates,flat ui,html,html and css templates,html dashboard template,html5,jquery html,premium,premium quality,sidebar bootstrap 4,template admin bootstrap 4"/>
+ <!-- breadcrumb -->
+ <div class="breadcrumb-header justify-content-between">
+    <div>
+        <h4 class="content-title mb-2">Form Data peminjaman</h4>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{route('data-peminjaman')}}">Data peminjaman</a></li>
+                <li class="breadcrumb-item text-white active">Form Data Peminjaman</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- /breadcrumb -->
+<div class="row row-sm">
+    <div class="col-xl-12 col-lg-12 col-sm-12 col-md-12">
+        <div class="card">
+            
 
-		<!-- Title -->
-		<title> Azira -  Premium dashboard ui bootstrap rwd admin html5 template </title>
-
-		<!--- Favicon --->
-		<link rel="icon" href="assets/img/brand/favicon.png" type="image/x-icon"/>
-
-		<!-- Bootstrap css -->
-		<link href="assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" id="style"/>
-
-		<!--- Style css --->
-		<link href="assets/css/style.css" rel="stylesheet">
-		<link href="assets/css/plugins.css" rel="stylesheet">
-
-		<!--- Icons css --->
-		<link href="assets/css/icons.css" rel="stylesheet">
-
-		<!--- Animations css --->
-		<link href="assets/css/animate.css" rel="stylesheet">
-
-	</head>
-
-	<body class="main-body app sidebar-mini ltr">
-
-		<!-- Loader -->
-		<div id="global-loader">
-			<img src="../assets/img/loaders/loader-4.svg" class="loader-img" alt="Loader">
-		</div>
-		<!-- /Loader -->
-        <div class="main-header side-header sticky nav nav-item bg-primary">
-            <div class="container-fluid main-container">
-                <div class="main-header-left ">
-                    <div class="app-sidebar__toggle mobile-toggle" data-bs-toggle="sidebar">
-                        <a class="open-toggle"   href="javascript:void(0);"><i class="header-icons" data-eva="menu-outline"></i></a>
-                        <a class="close-toggle"   href="javascript:void(0);"><i class="header-icons" data-eva="close-outline"></i></a>
+            <div class="pd-t-10 pd-s-10 pd-e-10 bg-white bd-b">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 class="card-title mg-b-10">Data peminjaman</h4>
                     </div>
-                    <div class="responsive-logo">
-                        <a href="/" class="header-logo"><img src="{{asset('')}}back/img/brand/logo.png" class="logo-11"></a>
-                        <a href="/" class="header-logo"><img src="{{asset('')}}back/img/brand/logo-white.png" class="logo-1"></a>
-                    </div>
-                  
-                </div>
-                <button class="navbar-toggler nav-link icon navresponsive-toggler vertical-icon ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fe fe-more-vertical header-icons navbar-toggler-icon"></i>
-                </button>
-                <div class="mb-0 navbar navbar-expand-lg navbar-nav-right responsive-navbar navbar-dark p-0  mg-lg-s-auto">
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
-                        <div class="main-header-right">
-                            <div class="nav nav-item nav-link" id="bs-example-navbar-collapse-1">
-                                <form class="navbar-form" role="search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Search">
-                                        <span class="input-group-btn">
-                                            <button type="reset" class="btn btn-default">
-                                                <i class="fas fa-times"></i>
-                                            </button>
-                                            <button type="submit" class="btn btn-default nav-link">
-                                                <i class="fe fe-search"></i>
-                                            </button>
-                                        </span>
-                                    </div>
-                                </form>
-                            </div>
-                            <li class="dropdown nav-item main-layout">
-                                <a class="new theme-layout nav-link-bg layout-setting" >
-                                    <span class="dark-layout"><i class="fe fe-moon"></i></span>
-                                    <span class="light-layout"><i class="fe fe-sun"></i></span>
-                                </a>
-                            </li>
-                            <div class="nav nav-item  navbar-nav-right mg-lg-s-auto">
-                                <div class="nav-item full-screen fullscreen-button">
-                                    <a class="new nav-link full-screen-link"   href="javascript:void(0);"><i class="fe fe-maximize"></i></span></a>
+                    <div class="col-md-6">
+                        <div class="d-flex my-auto btn-list justify-content-end">
+                            <a href="{{ route('data-peminjaman/input')}}" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah</a>
+                             <button onclick="formImport()" class="btn btn-sm btn-secondary"><i class="fa fa-upload me-2"></i> Import</button>
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-sm btn-success dropdown-toggle" data-bs-toggle="dropdown">
+                                    <i class="fa fa-download me-2"></i>Export
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="javascript:void(0)" onclick="exportExcel()">Excel</a>
+                                    <a class="dropdown-item" href="javascript:void(0)" onclick="exportPdf()">PDF</a>
                                 </div>
-                                
-                                <div class="dropdown main-profile-menu nav nav-item nav-link">
-                                    <a class="profile-user d-flex" href=""><img src="{{asset('')}}back/user/al.jpg" alt="user-img" class="rounded-circle mCS_img_loaded"><span></span></a>
-    
-                                    <div class="dropdown-menu">
-                                        <div class="main-header-profile header-img">
-                                            {{-- <td><img width="100px" height="60px" class="rounded-5" src="@if($dt->img) {{asset('')}}images/user/{{$dt->img}} @else {{asset('')}}images/no-user.png @endif" style="object-fit:cover"> </td> --}}
-                                            <div class="main-img-user"><img src="{{asset('')}}back/user/al.jpg" alt="user-img" class="rounded-circle mCS_img_loaded"></div>
-                                            <h6>hello</h6>
-                                            <span>hay</span>
-    
-                                        </div>
-                                        <!-- <a class="dropdown-item" href=""><i class="far fa-user"></i> My Profile</a>
-                                        <a class="dropdown-item" href=""><i class="far fa-clock"></i> Activity Logs</a> -->
-                                        <form method="POST" action="">
-                                            @csrf
-                                            <div class="row mb-3 px-3"> 
-                                                <button type="submit" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Sign Out</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="dropdown main-header-message right-toggle">
-                                    <!-- <a class="nav-link pe-0" data-bs-toggle="sidebar-right" data-bs-target=".sidebar-right">
-                                        <i class="ion ion-md-menu tx-20 bg-transparent"></i>
-                                    </a> -->
-                                    <a class="nav-link pe-0">
-                                        <i class="ion ion-md-menu tx-20 bg-transparent"></i>
-                                    </a>
-                                </div>
-                            </div>
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -207,7 +131,7 @@
                     
 					<div class="breadcrumb-header justify-content-between">
 						<div>
-							<h4 class="content-title mb-2">Hy, welcome back!</h4>
+							<h4 class="content-title mb-2">Hi, welcome back!</h4>
 							<nav aria-label="breadcrumb">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a   href="javascript:void(0);">Dashboard</a></li>
