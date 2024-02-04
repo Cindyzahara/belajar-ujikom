@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\PeminjamController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UlasanBukuController;
 
@@ -33,3 +34,9 @@ Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori');
 Route::get('/data-buku/input', [BukuController::class, 'input'])->name('data-buku/input');
 Route::get('/ulasanBuku', [UlasanBukuController::class, 'index'])->name('ulasanBuku');
 Route::post('/data-buku/create', [BukuController::class, 'store'])->name('data-buku-create');
+
+
+//pemijaman
+Route::get('/data-peminjaman', [PeminjamController::class, 'index'])->name('data-peminjaman');
+Route::get('/data-peminjaman/input', [PeminjamController::class, 'input'])->name('data-peminjaman/input');
+Route::post('/data-peminjaman/create', [PeminjamController::class, 'store'])->name('data-peminjaman-create');
