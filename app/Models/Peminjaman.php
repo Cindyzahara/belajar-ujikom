@@ -7,6 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Peminjaman extends Model
 {
-    protected $table = "users";
+    // protected $table = "users";
+    public $table = "peminjaman";
     protected $guarded = ['id'];
+    protected $fillable = [
+        'id','user_id','buku_id','TaggalPeminjaman','TaggalPengembalian', 'StatusPeminjaman'
+    ];
+
+    public function user(){
+        return $this->belongsTo(User::class, 'user_id', 'user_id');
+    }
+    public function buku(){
+        return $this->belongsTo(Buku::class, 'buku_id', 'buku_id');
+    }
 }
