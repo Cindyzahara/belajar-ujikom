@@ -10,7 +10,6 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{route('data-buku')}}">Data buku</a></li>
-                <li class="breadcrumb-item text-white active">Form Data Buku</li>
             </ol>
         </nav>
     </div>
@@ -44,19 +43,25 @@
                 </div>
             </div>
             <div class="card-body">
+                @if(Session::has('success'))
+                <div class="alert alert-success" role="alert">
+                    {{ Session::get('success') }}
+                </div>
+            @endif
                 <!-- message info -->
                 @include('_component.message')
                 <div class="row">
                     <div class="col-md-3">
-                        <label class="form-label mt-2 mb-0">Hak Akses</label> 
+                        <label class="form-label mt-2 mb-0">Pilih Kategori</label> 
                         <select id="f1" class="form-control select2" onchange="reload_table()">
                             <option value="">=== semua ===</option>
-                            <option value="1" @if(request()->get('f1')==1) selected @endif>administrator</option>
-                            <option value="2" @if(request()->get('f1')==2) selected @endif>operator</option>
+                            <option value="fiksi">Fiksi</option>
+                            <option value="sejarah">Sejarah</option>
                         </select>
                     </div>
                 </div>
                 <hr>
+             
                 <div class="table-responsive">
                     <table id="tbl_list" class="table table-sm table-striped table-bordered tx-14" width="100%">
                         <thead>
@@ -78,10 +83,10 @@
                                 <td>{{ $item->penerbit}}</td>
                                 <td>{{ $item->tahun_terbit}}</td>
                                 <td>
-                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="" method="POST">
+                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('data-buku_destroy', $item->id)}}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <a href="" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                                        <a href="{{ route('data-buku_edit', $item->id)}}" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                                         <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                                     </form>
                                 </td>

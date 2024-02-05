@@ -51,13 +51,13 @@
                                     <div class="main-header-profile header-img">
                                         {{-- <td><img width="100px" height="60px" class="rounded-5" src="@if($dt->img) {{asset('')}}images/user/{{$dt->img}} @else {{asset('')}}images/no-user.png @endif" style="object-fit:cover"> </td> --}}
                                         <div class="main-img-user"><img src="{{asset('')}}back/user/al.jpg" alt="user-img" class="rounded-circle mCS_img_loaded"></div>
-                                        <h6>hello</h6>
-                                        <span>hay</span>
+                                        <h6>@auth {{ auth()->user()->username }} @endauth</h6>
+                                        <span>@auth {{ auth()->user()->role }} @endauth</span>
 
                                     </div>
                                     <!-- <a class="dropdown-item" href=""><i class="far fa-user"></i> My Profile</a>
                                     <a class="dropdown-item" href=""><i class="far fa-clock"></i> Activity Logs</a> -->
-                                    <form method="POST" action="">
+                                    <form method="POST" action="{{ route('logout')}}">
                                         @csrf
                                         <div class="row mb-3 px-3"> 
                                             <button type="submit" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Sign Out</button>

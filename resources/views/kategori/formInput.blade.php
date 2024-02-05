@@ -12,8 +12,8 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-                    <li class="breadcrumb-item"><a href="{{route('data-buku')}}">Data Buku</a></li>
-                    <li class="breadcrumb-item text-white active">Form Input Buku</li>
+                    <li class="breadcrumb-item"><a href="{{route('kategori')}}">Kategori Buku </a></li>
+                    <li class="breadcrumb-item text-white active">Form Input Pengguna</li>
                 </ol>
             </nav>
         </div>
@@ -30,7 +30,7 @@
                     <!-- message info -->
                     @include('_component.message')
                     <div class="pd-10 pd-sm-20 bg-gray-100">
-                        <form action="{{ route('data-buku-create')}}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('kategori-create')}}" method="post" enctype="multipart/form-data">
                           
                             @csrf
                         <div class="row">
@@ -39,37 +39,13 @@
                                 <div class="col-md-12">
                                     <div class="row row-xs align-items-center mg-b-20">
                                         <div class="col-md-3">
-                                            <label class="form-label mg-b-0">Judul</label>
+                                            <label class="form-label mg-b-0">Nama Kategori</label>
                                         </div>
                                         <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                            <input class="form-control" placeholder="" type="text" name="judul" value="{{old('judul')}}">
+                                            <input class="form-control" placeholder="" type="text" name="nama_kategori" value="{{old('nama_kategori')}}">
                                         </div>
                                     </div>
-                                    <div class="row row-xs align-items-center mg-b-20">
-                                        <div class="col-md-3">
-                                            <label class="form-label mg-b-0">Penulis</label>
-                                        </div>
-                                        <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                            <input class="form-control" placeholder="" type="text" name="penulis" value="{{old('penulis')}}">
-                                        </div>
-                                    </div>
-                                    <div class="row row-xs align-items-center mg-b-20">
-                                        <div class="col-md-3">
-                                            <label class="form-label mg-b-0">Penerbit </label>
-                                        </div>
-                                        <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                            <input class="form-control" placeholder="" type="text" name="penerbit" value="{{old('penerbit')}}">
-                                        </div>
-                                    </div>
-                                    <div class="row row-xs align-items-center mg-b-20">
-                                        <div class="col-md-3">
-                                            <label class="form-label mg-b-0">Tahun Terbit </label>
-                                        </div>
-                                        <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                            <input class="form-control" placeholder="" type="text" name="tahun_terbit" value="{{old('tahun_terbit')}}">
-                                        </div>
-                                    </div>
-
+                
                                     </div>
                                 </div>
                             </div>

@@ -46,13 +46,12 @@ class BukuController extends Controller
         // dd($request->all());
         Buku::create([
             'judul' => $request->judul,
-            'kategori_id' => $request->kategori_id,
             'penulis' => $request->penulis,
             'penerbit' => $request->penerbit,
             'tahun_terbit' => $request->tahun_terbit,
         ]);
 
-        return redirect()->route('data-buku');
+        return redirect()->route('data-buku')->with('success', 'Data berhasil disimpan');;
     }
 
     /**
@@ -74,7 +73,8 @@ class BukuController extends Controller
      */
     public function edit($id)
     {
-        //
+        $buku = Buku::findorfail($id);
+        return view('data-buku.formEdit', compact('buku'));
     }
 
     /**
@@ -86,7 +86,10 @@ class BukuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $buku = Buku::findorfail($id);
+        $buku->update($request->all());
+
+        return redirect()->route('data-buku')->with('success', 'Data berhasil diupdate');
     }
 
     /**
@@ -97,6 +100,10 @@ class BukuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $buku = Buku::findorfail($id);
+
+        $buku->delete();
+
+        return redirect()->route('data-buku')->with('success', 'Data berhasil dihapus');
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Kategori;
 
 class KategoriController extends Controller
 {
@@ -13,7 +14,13 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        return view('kategori.index');
+        $kategoriBuku = Kategori::all();
+        return view('kategori.index', compact('kategoriBuku'));
+    }
+
+    public function input(Request $request)
+    {
+        return view("kategori.formInput");
     }
 
     /**
@@ -34,7 +41,9 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Kategori::create ([
+            'nama_kategori' => $request->nama_kategori,
+        ]);
     }
 
     /**

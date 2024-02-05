@@ -37,7 +37,7 @@
 
 		<!-- Loader -->
 		<div id="global-loader">
-			<img src="../assets/img/loaders/loader-4.svg" class="loader-img" alt="Loader">
+			<img src="{{ asset('')}}assets/img/loaders/loader-4.svg" class="loader-img" alt="Loader">
 		</div>
 		@include('template_back.navheader')
 		<!-- page -->
