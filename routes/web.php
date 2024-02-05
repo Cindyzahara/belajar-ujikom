@@ -41,6 +41,9 @@ Route::get('/data-buku/input', [BukuController::class, 'input'])->name('data-buk
 Route::get('/kategori/input', [KategoriController::class, 'input'])->name('kategori_input');
 Route::get('/ulasanBuku', [UlasanBukuController::class, 'index'])->name('ulasanBuku');
 Route::post('/data-buku/create', [BukuController::class, 'store'])->name('data-buku-create');
+Route::get('/data-buku/edit/{id}', [BukuController::class, 'edit'])->name('data-buku_edit');
+Route::put('/data-buku/update/{id}', [BukuController::class, 'update'])->name('data-buku_update');
+Route::delete('/data-buku/destroy/{id}', [BukuController::class, 'destroy'])->name('data-buku_destroy');
 
 
 //pemijaman
