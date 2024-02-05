@@ -57,7 +57,7 @@
                                     </div>
                                     <!-- <a class="dropdown-item" href=""><i class="far fa-user"></i> My Profile</a>
                                     <a class="dropdown-item" href=""><i class="far fa-clock"></i> Activity Logs</a> -->
-                                    <form method="POST" action="{{ route('logout') }}">
+                                    <form method="POST" action="">
                                         @csrf
                                         <div class="row mb-3 px-3"> 
                                             <button type="submit" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Sign Out</button>

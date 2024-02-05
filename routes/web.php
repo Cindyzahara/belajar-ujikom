@@ -17,11 +17,16 @@ use App\Http\Controllers\BukuController;
 Route::get('/', function () {
     return view('template_back/layout');
 });
-Route::get('/', function () {
+Route::get('/hh', function () {
     return view('data-buku/index');
 });
 Route::get('/dashboard', function () {
     return view('dashboard/index');
 });
+Route::get('/data_ulasan_buku', function () {
+    return view('ulasan_buku.index');
+});
 
 Route::get('/data-buku', [BukuController::class, 'index'])->name('data-buku');
+
+Route::get('/ulasan-buku', [BukuController::class, 'index'])->name('ulasan-buku');
