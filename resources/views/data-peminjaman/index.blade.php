@@ -82,16 +82,16 @@
                             @endphp --}}
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{$item->user_id}}</td>
-                                <td>{{$item->buku_id}}</td>
+                                <td>{{$item->user->namaLengkap}}</td>
+                                <td>{{$item->buku->judul}}</td>
                                 <td>{{ $item->TaggalPeminjaman}}</td>
                                 <td>{{ $item->TaggalPengembalian}}</td>
                                 <td>{{ $item->StatusPeminjaman}}</td>
                                 <td>
-                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="" method="POST">
+                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('data-peminjaman_destroy', $item->id)}}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <a href="" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                                        <a href="{{ route('data-peminjaman_edit', $item->id)}}" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                                         <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                                     </form>
                                 </td>

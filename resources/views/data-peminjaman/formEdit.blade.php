@@ -8,7 +8,7 @@
     <!-- breadcrumb -->
     <div class="breadcrumb-header justify-content-between">
         <div>
-            <h4 class="content-title mb-2">Form Input Peminjaman</h4>
+            <h4 class="content-title mb-2">Form Edit Peminjaman</h4>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
@@ -24,15 +24,15 @@
             <div class="card">
                 <div class="card-body">
                     <div class="main-content-label mg-b-5">
-                        Form Input Data Peminjaman
+                        Form Edit Data Peminjaman
                     </div>
                     <p class="mg-b-20">Silahkan isi form di bawah ini dengan lengkap.</p>
                     <!-- message info -->
                     @include('_component.message')
                     <div class="pd-10 pd-sm-20 bg-gray-100">
-                        <form action="{{ route('data-peminjaman-create')}}" method="post" enctype="multipart/form-data">
-                          
-                            @csrf
+                    <form action="{{ route('data-peminjaman_update', $peminjaman->id)}}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
                         <div class="row">
                         <div class="col-md-12">
                             <div class="row">
@@ -106,10 +106,8 @@
                         </div>
 
                         </div>
-                        <button type="submit" class="float-right btn btn-primary pd-x-30 mg-e-5 mg-t-5">
-                            <i class='fa fa-save'></i> Simpan</button>
-                        <a href="{{route('data-peminjaman')}}" class="btn btn-secondary pd-x-30 mg-t-5">
-                            <i class='fa fa-chevron-left'></i> Kembali</a>
+                        <button type="submit" class="float-right btn btn-primary pd-x-30 mg-e-5 mg-t-5"><i id="msg_formEdit"></i>&nbsp;&nbsp;<i class='fa fa-save'></i> Simpan</button>
+                        <a href="{{route('data-peminjaman')}}" class="btn btn-secondary pd-x-30 mg-t-5"><i class='fa fa-chevron-left'></i> Kembali</a>
                         </form>
                     </div>
                 </div>
@@ -119,5 +117,5 @@
     </div>
 
 </div>
-<!-- /container -->
+
 @endsection

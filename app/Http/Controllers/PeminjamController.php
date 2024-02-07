@@ -15,7 +15,7 @@ class PeminjamController extends Controller
      */
     public function index()
     {
-        $peminjaman = Peminjaman::all();
+        $peminjaman = Peminjaman::with('user', 'buku')->orderBy('id', 'desc')->get();
         return view('data-peminjaman.index', compact('peminjaman'));
     }
 
@@ -47,7 +47,7 @@ class PeminjamController extends Controller
 
         
 
-        return redirect()->route('data-peminjaman');
+        return redirect()->route('data-peminjaman')->with('success', 'Data berhasil disimpan');
     }
 
     /**
@@ -69,7 +69,8 @@ class PeminjamController extends Controller
      */
     public function edit($id)
     {
-        //
+        $peminjaman = Peminjaman::findorfail($id);
+        return view('data-peminjaman.formEdit', compact('peminjaman'));
     }
 
     /**
@@ -81,7 +82,10 @@ class PeminjamController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $peminjaman = Peminjaman::findorfail($id);
+        $peminjaman->update($request->all());
+
+        return redirect()->route('data-peminjaman')->with('success', 'Data berhasil diupdate');
     }
 
     /**
@@ -92,6 +96,10 @@ class PeminjamController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $peminjaman = Peminjaman::findorfail($id);
+
+        $peminjaman->delete();
+
+        return redirect()->route('data-peminjaman')->with('success', 'Data berhasil dihapus');
     }
 }
