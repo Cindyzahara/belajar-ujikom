@@ -64,13 +64,13 @@
                         <thead>
                             <tr>
                                 {{-- penaman kolom di index --}}
-                                <th>No</th>
-                                <th>Nama</th>
-                                <th>Buku</th>
-                                <th>Tanggal Peminjaman</th>
-                                <th>Tanggal Pengembalian</th>
-                                <th>Status Peminjaman</th>
-                                <th>Action</th>
+                                <th width="20px">No</th>
+                                <th style="text-align:center">Nama</th>
+                                <th style="text-align:center">Buku</th>
+                                <th style="text-align:center">Tanggal Peminjaman</th>
+                                <th style="text-align:center">Tanggal Pengembalian</th>
+                                <th style="text-align:center">Status Peminjaman</th>
+                                <th style="text-align:center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -85,11 +85,11 @@
                             <tr>
                                 {{-- memanggil data base ke halaman colom index --}}
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{$item->user->namaLengkap}}</td>
-                                <td>{{$item->buku->judul}}</td>
-                                <td>{{ $item->TaggalPeminjaman}}</td>
-                                <td>{{ $item->TaggalPengembalian}}</td>
-                                <td>{{ $item->StatusPeminjaman}}</td>
+                                <td style="text-align:center">{{$item->user->namaLengkap}}</td>
+                                <td style="text-align:center">{{$item->buku->judul}}</td>
+                                <td style="text-align:center">{{ $item->TaggalPeminjaman}}</td>
+                                <td style="text-align:center">{{ $item->TaggalPengembalian}}</td>
+                                <td style="text-align:center">{{ $item->StatusPeminjaman}}</td>
                                 <td>
                                     {{-- penghapus data --}}
                                     <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('data-peminjaman_destroy', $item->id)}}" method="POST">
