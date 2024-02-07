@@ -15,6 +15,8 @@ class PeminjamController extends Controller
      */
     public function index()
     {
+        //memanggil data relasi antarv tabel di model
+        //programa memesan id dan atribut lain nya dengan menggunakan desc/asc
         $peminjaman = Peminjaman::with('user', 'buku')->orderBy('id', 'desc')->get();
         return view('data-peminjaman.index', compact('peminjaman'));
     }
@@ -37,6 +39,7 @@ class PeminjamController extends Controller
      */
     public function store(Request $request)
     {
+        //data untuk menambhkan ke halaman database yang nanti di panggil di view
         Peminjaman::create([
             'user_id' => $request->user_id,
             'buku_id' => $request->buku_id,
@@ -46,7 +49,7 @@ class PeminjamController extends Controller
         ]);
 
         
-
+        //membuat alert succes ketika berhasil tersimpan ke halaman index
         return redirect()->route('data-peminjaman')->with('success', 'Data berhasil disimpan');
     }
 
@@ -69,6 +72,7 @@ class PeminjamController extends Controller
      */
     public function edit($id)
     {
+        //pengeditan
         $peminjaman = Peminjaman::findorfail($id);
         return view('data-peminjaman.formEdit', compact('peminjaman'));
     }
@@ -82,6 +86,7 @@ class PeminjamController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //untuk data yang sudah di edit lalu di update ke halaman index pemijaman
         $peminjaman = Peminjaman::findorfail($id);
         $peminjaman->update($request->all());
 
@@ -96,6 +101,7 @@ class PeminjamController extends Controller
      */
     public function destroy($id)
     {
+        // untuk menghapus
         $peminjaman = Peminjaman::findorfail($id);
 
         $peminjaman->delete();

@@ -46,7 +46,7 @@ Route::put('/data-buku/update/{id}', [BukuController::class, 'update'])->name('d
 Route::delete('/data-buku/destroy/{id}', [BukuController::class, 'destroy'])->name('data-buku_destroy');
 
 
-//pemijaman
+//route peminjaman
 Route::get('/data-peminjaman', [PeminjamController::class, 'index'])->name('data-peminjaman');
 Route::get('/data-peminjaman/input', [PeminjamController::class, 'input'])->name('data-peminjaman/input');
 Route::post('/data-peminjaman/create', [PeminjamController::class, 'store'])->name('data-peminjaman-create');

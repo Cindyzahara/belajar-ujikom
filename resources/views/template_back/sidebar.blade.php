@@ -64,6 +64,7 @@
                         </ul>
                     </li>
                     <li class="slide">
+                        {{-- mengghubungkan ke sidebar peminjaman --}}
                         <a class="side-menu__item" href="{{ route('data-peminjaman') }}"><i class="side-menu__icon fe fe-airplay"></i><span class="side-menu__label">Data Pengguna</span></a>
                     </li>
                 </ul>

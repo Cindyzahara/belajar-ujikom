@@ -28,6 +28,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="d-flex my-auto btn-list justify-content-end">
+                            {{-- memanggil data dari controller class input --}}
                             <a href="{{ route('data-peminjaman/input')}}" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah</a>
                              <button onclick="formImport()" class="btn btn-sm btn-secondary"><i class="fa fa-upload me-2"></i> Import</button>
                             <div class="dropdown">
@@ -62,6 +63,7 @@
                     <table id="tbl_list" class="table table-sm table-striped table-bordered tx-14" width="100%">
                         <thead>
                             <tr>
+                                {{-- penaman kolom di index --}}
                                 <th>No</th>
                                 <th>Nama</th>
                                 <th>Buku</th>
@@ -81,6 +83,7 @@
                              $buku = DB::table('buku')->select('*')->orderBy('judul','ASC')->get(); 
                             @endphp --}}
                             <tr>
+                                {{-- memanggil data base ke halaman colom index --}}
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{$item->user->namaLengkap}}</td>
                                 <td>{{$item->buku->judul}}</td>
@@ -88,9 +91,11 @@
                                 <td>{{ $item->TaggalPengembalian}}</td>
                                 <td>{{ $item->StatusPeminjaman}}</td>
                                 <td>
+                                    {{-- penghapus data --}}
                                     <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('data-peminjaman_destroy', $item->id)}}" method="POST">
                                         @csrf
                                         @method('DELETE')
+                                        {{-- untuk mengedit --}}
                                         <a href="{{ route('data-peminjaman_edit', $item->id)}}" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                                         <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                                     </form>
