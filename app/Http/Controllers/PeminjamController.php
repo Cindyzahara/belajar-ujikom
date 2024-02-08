@@ -15,7 +15,7 @@ class PeminjamController extends Controller
      */
     public function index()
     {
-        $peminjaman = Peminjaman::all();
+        $peminjaman = Peminjaman::with('user','buku')->orderBy('id','desc')->get();
         return view('data-peminjaman.index', compact('peminjaman'));
     }
 
@@ -47,7 +47,7 @@ class PeminjamController extends Controller
 
         
 
-        return redirect()->route('data-peminjaman');
+        return redirect()->route('data-peminjaman')->with('success', 'Data berhasil disimpan');
     }
 
     /**

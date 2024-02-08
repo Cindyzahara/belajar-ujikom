@@ -1,5 +1,5 @@
 @extends('template_back.layout')
-
+<title> Data Peminjam </title>
 @section('isi')
 
  <!-- breadcrumb -->
@@ -19,7 +19,7 @@
 <div class="row row-sm">
     <div class="col-xl-12 col-lg-12 col-sm-12 col-md-12">
         <div class="card">
-            
+
 
             <div class="pd-t-10 pd-s-10 pd-e-10 bg-white bd-b">
                 <div class="row">
@@ -48,7 +48,7 @@
                 @include('_component.message')
                 <div class="row">
                     <div class="col-md-3">
-                        <label class="form-label mt-2 mb-0">Kategori Buku</label> 
+                        <label class="form-labe l mt-2 mb-0">Kategori Buku</label> 
                         <select id="f1" class="form-control select2" onchange="reload_table()">
                             @php $db = DB::table('buku')->select('*')->orderBy('judul','ASC')->get(); @endphp
                             <option value="">=== semua ===</option>
@@ -59,7 +59,7 @@
                     </div>
                 <hr>
                 <div class="table-responsive">
-                    <table id="tbl_list" class="table table-sm table-striped table-bordered tx-14" width="100%">
+                    <table id="basic-datatable" class="table table-sm table-striped table-bordered tx-14" width="100%">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -82,8 +82,8 @@
                             @endphp --}}
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{$item->user_id}}</td>
-                                <td>{{$item->buku_id}}</td>
+                                <td>{{$item->user->username}}</td>
+                                <td>{{$item->buku->judul}}</td>
                                 <td>{{ $item->TaggalPeminjaman}}</td>
                                 <td>{{ $item->TaggalPengembalian}}</td>
                                 <td>{{ $item->StatusPeminjaman}}</td>
@@ -106,5 +106,23 @@
 
 </div>
 
+<script>
+       $(function() {
+                // formelement
+                $('.select2').select2({ width: 'resolve' });
+                
+                // init datatable.
+                $('#basic-datatable').DataTable({
+                    "paging": true,
+                    "lengthChange": true,
+                    "searching": true,
+                    "ordering": false,
+                    "info": true,
+                    "autoWidth": false,
+                    "responsive": true,
+                });
+
+            });
+</script>
     
 @endsection

@@ -15,9 +15,9 @@ class Peminjaman extends Model
     ];
 
     public function user(){
-        return $this->belongsTo(User::class, 'user_id', 'user_id');
+        return $this->belongsTo(User::class);
     }
     public function buku(){
-        return $this->belongsTo(Buku::class, 'buku_id', 'buku_id');
+        return $this->belongsTo(Buku::class);
     }
 }

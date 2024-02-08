@@ -44,6 +44,8 @@ class KategoriController extends Controller
         Kategori::create ([
             'nama_kategori' => $request->nama_kategori,
         ]);
+
+        return redirect()->route('kategori')->with('success', 'Data berhasil disimpan');
     }
 
     /**

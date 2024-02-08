@@ -1,5 +1,5 @@
 @extends('template_back.layout')
-
+<title> Form Input Kategori </title>
 @section('isi')
 
 <!-- container opened -->
@@ -30,7 +30,7 @@
                     <!-- message info -->
                     @include('_component.message')
                     <div class="pd-10 pd-sm-20 bg-gray-100">
-                        <form action="{{ route('kategori-create')}}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('kategori/store')}}" method="post" enctype="multipart/form-data">
                           
                             @csrf
                         <div class="row">

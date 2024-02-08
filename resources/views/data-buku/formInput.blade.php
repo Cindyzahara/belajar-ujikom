@@ -1,5 +1,5 @@
 @extends('template_back.layout')
-
+<title> Form Input Buku </title>
 @section('isi')
 
 <!-- container opened -->

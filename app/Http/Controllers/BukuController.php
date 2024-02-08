@@ -51,7 +51,7 @@ class BukuController extends Controller
             'tahun_terbit' => $request->tahun_terbit,
         ]);
 
-        return redirect()->route('data-buku')->with('success', 'Data berhasil disimpan');;
+        return redirect()->route('data-buku')->with('success', 'Data berhasil disimpan');
     }
 
     /**

@@ -1,5 +1,6 @@
 @extends('template_back.layout')
-
+		
+<title> Kategori Buku </title>
 @section('isi')
 
  <!-- breadcrumb -->
@@ -8,7 +9,7 @@
         <h4 class="content-title mb-2">Kategori</h4>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboarz</a></li>
+                <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{route('kategori')}}">Kategori Buku</a></li>
             </ol>
         </nav>
@@ -19,7 +20,6 @@
     <div class="col-xl-12 col-lg-12 col-sm-12 col-md-12">
         <div class="card">
             
-
             <div class="pd-t-10 pd-s-10 pd-e-10 bg-white bd-b">
                 <div class="row">
                     <div class="col-md-6">
@@ -47,7 +47,7 @@
                 @include('_component.message')
                 <div class="row">
                     <div class="col-md-3">
-                        <label class="form-label mt-2 mb-0">Hak Akses</label> 
+                        <label class="form-label mt-2 mb-0">Pilih Kategori</label> 
                         <select id="f1" class="form-control select2" onchange="reload_table()">
                             <option value="">=== semua ===</option>
                             <option value="1" @if(request()->get('f1')==1) selected @endif>administrator</option>
