@@ -37,15 +37,23 @@
 									</svg>
 								</div>
 								<div class="project-content">
-									<h6>Invoices</h6>
+									<h6>Buku</h6>
 									<ul>
 										<li>
-											<strong>Processing</strong>
+											<strong>Data Buku</strong>
 											<span>5</span>
 										</li>
 
 										<li>
-											<strong>Paid</strong>
+											<strong>Kategori Buku</strong>
+											<span>56</span>
+										</li>
+										<li>
+											<strong>Koleksi Pribadi</strong>
+											<span>56</span>
+										</li>
+										<li>
+											<strong>Ulasan Buku</strong>
 											<span>56</span>
 										</li>
 									</ul>
@@ -70,18 +78,7 @@
 									</svg>
 								</div>
 								<div class="project-content">
-									<h6>Tasks</h6>
-									<ul>
-										<li>
-											<strong>Processing</strong>
-											<span>42</span>
-										</li>
-
-										<li>
-											<strong>Completed</strong>
-											<span>23</span>
-										</li>
-									</ul>
+									<h6>Peminjaman</h6>
 								</div>
 							</div>
 						</div>
@@ -100,18 +97,7 @@
 									</svg>
 								</div>
 								<div class="project-content">
-									<h6>Estimates</h6>
-									<ul>
-										<li>
-											<strong>Processing</strong>
-											<span>2</span>
-										</li>
-
-										<li>
-											<strong>Accepted</strong>
-											<span>16</span>
-										</li>
-									</ul>
+									<h6>Pengembalian</h6>
 								</div>
 							</div>
 						</div>
@@ -128,17 +114,7 @@
 									</svg>
 								</div>
 								<div class="project-content">
-									<h6>Revenue</h6>
-									<ul>
-										<li>
-											<strong>Earnings</strong>
-											<span>$15,425</span>
-										</li>
-										<li>
-											<strong>Expensive</strong>
-											<span>$8,147</span>
-										</li>
-									</ul>
+									<h6>Data Pengguna</h6>
 								</div>
 							</div>
 						</div>
