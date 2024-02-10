@@ -8,6 +8,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UlasanBukuController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PenggunaController;
+use App\Http\Controllers\KoleksiController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +64,11 @@ Route::delete('/data-pengguna/destroy/{id}', [PenggunaController::class, 'destro
 Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori');
 Route::get('/kategori/input', [KategoriController::class, 'input'])->name('kategori_input');
 Route::post('/kategori/store', [KategoriController::class, 'store'])->name('kategori/store');
+
+//koleksi pribadi
+Route::get('/koleksi', [KoleksiController::class, 'index'])->name('koleksi');
+Route::get('/koleksi/input', [KoleksiController::class, 'input'])->name('koleksi/input');
+Route::post('/koleksi/store', [KoleksiController::class, 'store'])->name('koleksi/store');
+Route::get('/koleksi/edit/{id}', [koleksiController::class, 'edit'])->name('koleksi_edit');
+Route::post('/koleksi/create', [KoleksiController::class, 'store'])->name('koleksi-create');
+
