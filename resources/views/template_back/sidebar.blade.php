@@ -59,7 +59,7 @@
                             <li class="side-menu__label1"><a href="javascript:void(0);">Data Buku</a></li>
                             <li><a class="slide-item" href="{{ route('data-buku')}}">Data Buku</a></li>
                             <li><a class="slide-item" href="{{ route('kategori')}}">Kategori Buku</a></li>
-                            <li><a class="slide-item" href="">Koleksi Pribadi</a></li>
+                            <li><a class="slide-item" href="{{ route('koleksi')}}">Koleksi Pribadi</a></li>
                             <li><a class="slide-item" href="">Ulasan Buku</a></li>
                         </ul>
                     </li>
