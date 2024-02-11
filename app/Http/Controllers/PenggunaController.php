@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 
+use PDF;
+
 class PenggunaController extends Controller
 {
     /**
@@ -104,5 +106,24 @@ class PenggunaController extends Controller
         $user->delete();
 
         return redirect()->route('data-pengguna')->with('success', 'Data berhasil dihapus');
+    }
+
+    //untuk mengekspor data atau konten ke dalam format PDF
+    public function export_pdf(Request $request)
+    {
+        //DECLARE REQUEST
+        //QUERY
+        $user = User::select('*');
+        
+        $user = $user->get();
+
+        // Meneruskan parameter ke tampilan ekspor
+        $pdf = PDF::loadview('data-pengguna.exportPdf', ['user'=>$user]);
+        $pdf->setPaper('a4', 'portrait');
+        $pdf->setOption(['dpi' => 150, 'defaultFont' => 'sans-serif']);
+        // SET FILE NAME
+        $filename = date('YmdHis') . '_data_pengguna';
+        // untuk mendownload file pdf
+        return $pdf->download($filename.'.pdf');
     }
 }

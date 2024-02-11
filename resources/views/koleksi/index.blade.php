@@ -5,12 +5,12 @@
  <!-- breadcrumb -->
  <div class="breadcrumb-header justify-content-between">
     <div>
-        <h4 class="content-title mb-2">Form Koleksi</h4>
+        <h4 class="content-title mb-2">Form Koleksi Buku</h4>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="{{route('koleksi')}}">Koleksi</a></li>
-                <li class="breadcrumb-item text-white active">Form koleksi</li>
+                <li class="breadcrumb-item"><a href="{{route('koleksi')}}">Koleksi Buku</a></li>
+                <li class="breadcrumb-item text-white active">Form koleks Buku</li>
             </ol>
         </nav>
     </div>
@@ -24,7 +24,7 @@
             <div class="pd-t-10 pd-s-10 pd-e-10 bg-white bd-b">
                 <div class="row">
                     <div class="col-md-6">
-                        <h4 class="card-title mg-b-10">Koleksi</h4>
+                        <h4 class="card-title mg-b-10">Koleksi Buku</h4>
                     </div>
                     <div class="col-md-6">
                         <div class="d-flex my-auto btn-list justify-content-end">
@@ -65,26 +65,20 @@
                                 <th>No</th>
                                 <th>Nama</th>
                                 <th>Buku</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             {{-- @php $no=1; @endphp --}}
                             @foreach ($koleksi as $item)
-                            {{-- @php 
-                             $koleksi = DB::table('users')->select('*')->orderBy('username','ASC')->get(); 
-                            @endphp --}}
-                            {{-- @php 
-                             $buku = DB::table('buku')->select('*')->orderBy('judul','ASC')->get(); 
-                            @endphp --}}
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{$item->user->username}}</td>
-                                <td>{{$item->buku->judul}}</td>
+                                <td>{{$item->user->username??''}}</td>
+                                <td>{{$item->buku->judul??''}}</td>
                                 <td>
                                     <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <a href="" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                                         <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                                     </form>
                                 </td>

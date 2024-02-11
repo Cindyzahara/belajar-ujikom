@@ -54,6 +54,9 @@ Route::delete('/data-buku/destroy/{id}', [BukuController::class, 'destroy'])->na
 Route::get('/data-peminjaman', [PeminjamController::class, 'index'])->name('data-peminjaman');
 Route::get('/data-peminjaman/input', [PeminjamController::class, 'input'])->name('data-peminjaman/input');
 Route::post('/data-peminjaman/create', [PeminjamController::class, 'store'])->name('data-peminjaman-create');
+Route::get('/data-peminjaman/edit/{id}', [PeminjamController::class, 'edit'])->name('data-peminjaman_edit');
+Route::put('/data-peminjaman/update/{id}', [PeminjamController::class, 'update'])->name('data-peminjaman_update');
+Route::delete('/data-peminjaman/destroy/{id}', [PeminjamController::class, 'destroy'])->name('data-peminjaman_destroy');
 
 //pengguna
 Route::get('/data-pengguna', [PenggunaController::class, 'index'])->name('data-pengguna');
@@ -62,6 +65,7 @@ Route::post('/data-pengguna/store', [PenggunaController::class, 'store'])->name(
 Route::get('/data-pengguna/edit/{id}', [PenggunaController::class, 'edit'])->name('data-pengguna_edit');
 Route::put('/data-pengguna/update/{id}', [PenggunaController::class, 'update'])->name('data-pengguna_update');
 Route::delete('/data-pengguna/destroy/{id}', [PenggunaController::class, 'destroy'])->name('data-pengguna_destroy');
+Route::get('/export_pdf_datapengguna', [PenggunaController::class, 'export_pdf'])->name('data_pengguna.export_pdf');
 
 //kategori buku 
 Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori');
@@ -74,7 +78,7 @@ Route::get('/ulasanBuku', [UlasanBukuController::class, 'index'])->name('ulasanB
 //koleksi pribadi
 Route::get('/koleksi', [KoleksiController::class, 'index'])->name('koleksi');
 Route::get('/koleksi/input', [KoleksiController::class, 'input'])->name('koleksi/input');
-Route::post('/koleksi/store', [KoleksiController::class, 'store'])->name('koleksi/store');
+Route::post('/koleksi/store{id}', [KoleksiController::class, 'store'])->name('koleksi/store');
 Route::get('/koleksi/edit/{id}', [koleksiController::class, 'edit'])->name('koleksi_edit');
 Route::post('/koleksi/create', [KoleksiController::class, 'store'])->name('koleksi-create');
 

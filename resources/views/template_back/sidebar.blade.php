@@ -24,30 +24,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="sidebar-navs">
-                    <ul class="nav  nav-pills-circle">
-                        <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Settings" aria-describedby="tooltip365540">
-                            <a class="nav-link text-center m-2">
-                                <i class="fe fe-settings"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Chat" aria-describedby="tooltip143427">
-                            <a class="nav-link text-center m-2">
-                                <i class="fe fe-mail"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Followers">
-                            <a class="nav-link text-center m-2">
-                                <i class="fe fe-user"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Logout">
-                            <a class="nav-link text-center m-2">
-                                <i class="fe fe-power"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <br>
                 <div class="slide-left disabled" id="slide-left"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"/></svg></div>
                 <ul class="side-menu ">
                     <li class="slide">

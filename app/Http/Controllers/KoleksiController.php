@@ -15,7 +15,7 @@ class KoleksiController extends Controller
      */
     public function index()
     {
-        $koleksi = koleksi::with('user','buku')->orderBy('id','desc')->get();
+        $koleksi = Koleksi::with('user','buku')->orderBy('id','desc')->get();
         return view('koleksi.index', compact('koleksi'));
     }
 
@@ -41,12 +41,13 @@ class KoleksiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        // dd($request->all());
+        $cekuser = auth()->user()->id;
+        
         Koleksi::create([
-            'user_id' => $request->user_id,
-            'buku_id' => $request->buku_id,
+            'user_id' => $cekuser,
+            'buku_id' => $id,
         ]);
 
         return redirect()->route('koleksi')->with('success', 'Data berhasil disimpan');

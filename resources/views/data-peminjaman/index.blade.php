@@ -19,7 +19,7 @@
 <div class="row row-sm">
     <div class="col-xl-12 col-lg-12 col-sm-12 col-md-12">
         <div class="card">
-
+            
 
             <div class="pd-t-10 pd-s-10 pd-e-10 bg-white bd-b">
                 <div class="row">
@@ -28,6 +28,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="d-flex my-auto btn-list justify-content-end">
+                            {{-- memanggil data dari controller class input --}}
                             <a href="{{ route('data-peminjaman/input')}}" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah</a>
                              <button onclick="formImport()" class="btn btn-sm btn-secondary"><i class="fa fa-upload me-2"></i> Import</button>
                             <div class="dropdown">
@@ -48,7 +49,7 @@
                 @include('_component.message')
                 <div class="row">
                     <div class="col-md-3">
-                        <label class="form-labe l mt-2 mb-0">Kategori Buku</label> 
+                        <label class="form-label mt-2 mb-0">Kategori Buku</label> 
                         <select id="f1" class="form-control select2" onchange="reload_table()">
                             @php $db = DB::table('buku')->select('*')->orderBy('judul','ASC')->get(); @endphp
                             <option value="">=== semua ===</option>
@@ -59,16 +60,17 @@
                     </div>
                 <hr>
                 <div class="table-responsive">
-                    <table id="basic-datatable" class="table table-sm table-striped table-bordered tx-14" width="100%">
+                    <table id="tbl_list" class="table table-sm table-striped table-bordered tx-14" width="100%">
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>Nama</th>
-                                <th>Buku</th>
-                                <th>Tanggal Peminjaman</th>
-                                <th>Tanggal Pengembalian</th>
-                                <th>Status Peminjaman</th>
-                                <th>Action</th>
+                                {{-- penaman kolom di index --}}
+                                <th width="20px">No</th>
+                                <th style="text-align:center">Nama</th>
+                                <th style="text-align:center">Buku</th>
+                                <th style="text-align:center">Tanggal Peminjaman</th>
+                                <th style="text-align:center">Tanggal Pengembalian</th>
+                                <th style="text-align:center">Status Peminjaman</th>
+                                <th style="text-align:center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -81,17 +83,20 @@
                              $buku = DB::table('buku')->select('*')->orderBy('judul','ASC')->get(); 
                             @endphp --}}
                             <tr>
+                                {{-- memanggil data base ke halaman colom index --}}
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{$item->user->username}}</td>
-                                <td>{{$item->buku->judul}}</td>
-                                <td>{{ $item->TaggalPeminjaman}}</td>
-                                <td>{{ $item->TaggalPengembalian}}</td>
-                                <td>{{ $item->StatusPeminjaman}}</td>
+                                <td style="text-align:center">{{$item->user->namaLengkap}}</td>
+                                <td style="text-align:center">{{$item->buku->judul}}</td>
+                                <td style="text-align:center">{{ $item->TaggalPeminjaman}}</td>
+                                <td style="text-align:center">{{ $item->TaggalPengembalian}}</td>
+                                <td style="text-align:center">{{ $item->StatusPeminjaman}}</td>
                                 <td>
-                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="" method="POST">
+                                    {{-- penghapus data --}}
+                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('data-peminjaman_destroy', $item->id)}}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <a href="" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                                        {{-- untuk mengedit --}}
+                                        <a href="{{ route('data-peminjaman_edit', $item->id)}}" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                                         <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                                     </form>
                                 </td>
@@ -106,23 +111,5 @@
 
 </div>
 
-<script>
-       $(function() {
-                // formelement
-                $('.select2').select2({ width: 'resolve' });
-                
-                // init datatable.
-                $('#basic-datatable').DataTable({
-                    "paging": true,
-                    "lengthChange": true,
-                    "searching": true,
-                    "ordering": false,
-                    "info": true,
-                    "autoWidth": false,
-                    "responsive": true,
-                });
-
-            });
-</script>
     
 @endsection

@@ -50,31 +50,34 @@
                         <table class="table border-top-0 table-bordered text-nowrap border-bottom" id="basic-datatable">
                             <thead>
                                 <tr>
-                                    <th>No</th>
-                                    <th>Judul</th>
-                                    <th>Penulis</th>
-                                    <th>Penerbit</th>
-                                    <th>Tahun Terbit</th>
-                                    <th>Action</th>
+                                    <th width="20px">No</th>
+                                    <th style="text-align:center">Judul</th>
+                                    <th style="text-align:center">Penulis</th>
+                                    <th style="text-align:center">Penerbit</th>
+                                    <th style="text-align:center">Tahun Terbit</th>
+                                    <th style="text-align:center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($buku as $item)
                                 <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $item->judul}}</td>
-                                    <td>{{ $item->penulis}}</td>
-                                    <td>{{ $item->penerbit}}</td>
-                                    <td>{{ $item->tahun_terbit}}</td>
+                                    <td style="text-align:center">{{ $loop->iteration }}</td>
+                                    <td style="text-align:center">{{ $item->judul}}</td>
+                                    <td style="text-align:center">{{ $item->penulis}}</td>
+                                    <td style="text-align:center">{{ $item->penerbit}}</td>
+                                    <td style="text-align:center">{{ $item->tahun_terbit}}</td>
                                     <td>
                                         <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('data-buku_destroy', $item->id)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <a href="{{ route('data-buku_edit', $item->id)}}" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
-                                            <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
-                                            <a href="{{''}}" title="Edit" class="btn btn-warning btn-sm"><i class="fa fa-folder-plus"></i></a>
-                                           
+                                            <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash" title="Edit"></i></button>
                                         </form>
+                                        <form class="d-inline"  onsubmit="return confirm('Apakah Anda Yakin Mau Menambahkan Ke Daftar Koleksi?')" action="{{ route('koleksi/store',$item->id) }}" method="post">
+                                            @csrf
+                                            <button type="submit" class="btn btn-sm btn-warning"><i class="fe fe-folder-plus" data-bs-toggle="tooltip" title="Koleksi Pribadi"></i></button>
+                                        </form>
+                                        <a href="{{''}}" title="Ulasan Buku" class="btn btn-success btn-sm"><i class="fa fe-message-circle"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach
