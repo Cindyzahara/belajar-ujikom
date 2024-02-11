@@ -72,6 +72,8 @@
                                             @method('DELETE')
                                             <a href="{{ route('data-buku_edit', $item->id)}}" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                                             <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                            <a href="{{''}}" title="Edit" class="btn btn-warning btn-sm"><i class="fa fa-folder-plus"></i></a>
+                                           
                                         </form>
                                     </td>
                                 </tr>

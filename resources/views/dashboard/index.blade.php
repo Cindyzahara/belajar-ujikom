@@ -1,5 +1,5 @@
 @extends('template_back.content')
-
+<title> Dashboard </title>
 @section('isi')
 
 	<!-- container -->
@@ -155,7 +155,7 @@
 			<!-- /row -->
 
 			<!-- row -->
-			<div class="row row-sm ">
+			{{-- <div class="row row-sm ">
 				<div class="col-xl-8 col-lg-12 col-md-12 col-sm-12">
 					<div class="card overflow-hidden">
 						<div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
@@ -178,85 +178,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
-					<div class="card overflow-hidden">
-						<div class="card-body pb-3">
-							<div class="d-flex justify-content-between">
-								<h4 class="card-title mg-b-10">project &amp; task</h4>
-								<i class="mdi mdi-dots-horizontal text-gray"></i>
-							</div>
-							<p class="tx-12 text-muted mb-3">In project, a task is an activity that needs to be accomplished within a defined period of time or by a deadline. <a href="">Learn more</a></p>
-							<div class="table-responsive mb-0 projects-stat tx-14">
-								<table class="table table-hover table-bordered mb-0 text-md-nowrap text-lg-nowrap text-xl-nowrap  ">
-									<thead>
-										<tr>
-											<th>Project &amp; Task</th>
-											<th>Status</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>
-												<div class="project-names">
-													<h6 class="bg-primary-transparent text-primary d-inline-block me-2 text-center">U</h6>
-													<p class="d-inline-block font-weight-semibold mb-0">UI Design</p>
-												</div>
-											</td>
-											<td>
-												<div class="badge bg-success">Completed</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="project-names">
-													<h6 class="bg-pink-transparent text-pink d-inline-block text-center me-2">R</h6>
-													<p class="d-inline-block font-weight-semibold mb-0">Landing Page</p>
-												</div>
-											</td>
-											<td>
-												<div class="badge bg-warning">Pending</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="project-names">
-													<h6 class="bg-success-transparent text-success d-inline-block me-2 text-center">W</h6>
-													<p class="d-inline-block font-weight-semibold mb-0">Website &amp; Blog</p>
-												</div>
-											</td>
-											<td>
-												<div class="badge bg-danger">Canceled</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="project-names">
-													<h6 class="bg-purple-transparent text-purple d-inline-block me-2 text-center">P</h6>
-													<p class="d-inline-block font-weight-semibold mb-0">Product Development</p>
-												</div>
-											</td>
-											<td>
-												<div class="badge bg-teal">on-going</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="project-names">
-													<h6 class="bg-danger-transparent text-danger d-inline-block me-2 text-center">L</h6>
-													<p class="d-inline-block font-weight-semibold mb-0">Logo Design</p>
-												</div>
-											</td>
-											<td>
-												<div class="badge bg-success">Completed</div>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			
+			</div> --}}
 			<!-- /row -->
 
 			<!-- row -->

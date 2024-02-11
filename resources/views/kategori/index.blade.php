@@ -45,7 +45,7 @@
             <div class="card-body">
                 <!-- message info -->
                 @include('_component.message')
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-md-3">
                         <label class="form-label mt-2 mb-0">Pilih Kategori</label> 
                         <select id="f1" class="form-control select2" onchange="reload_table()">
@@ -54,7 +54,7 @@
                             <option value="2" @if(request()->get('f1')==2) selected @endif>operator</option>
                         </select>
                     </div>
-                </div>
+                </div> --}}
                 <hr>
                 <div class="table-responsive">
                     <table id="tbl_list" class="table table-sm table-striped table-bordered tx-14" width="100%">
