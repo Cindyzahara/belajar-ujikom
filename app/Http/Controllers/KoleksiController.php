@@ -111,7 +111,7 @@ class KoleksiController extends Controller
     //untuk mengexport data atau tampilan export
     public function export_pdf(Request $request)
     {
-        $koleksi = Koleksi::select('*');
+        $koleksi = Koleksi::select('*');// cuak
         
         $koleksi = $koleksi->get();
         //meneruskan parameter ke tampilan export
