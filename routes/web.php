@@ -38,11 +38,19 @@ Route::match(['get','post'],'/logout', [LoginController::class, 'logout'])->name
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/data-buku', [BukuController::class, 'index'])->name('data-buku');
 Route::get('/data-buku/input', [BukuController::class, 'input'])->name('data-buku/input');
-Route::get('/ulasanBuku', [UlasanBukuController::class, 'index'])->name('ulasanBuku');
 Route::post('/data-buku/create', [BukuController::class, 'store'])->name('data-buku-create');
 Route::get('/data-buku/edit/{id}', [BukuController::class, 'edit'])->name('data-buku_edit');
 Route::put('/data-buku/update/{id}', [BukuController::class, 'update'])->name('data-buku_update');
 Route::delete('/data-buku/destroy/{id}', [BukuController::class, 'destroy'])->name('data-buku_destroy');
+
+
+//ulasan buku
+Route::get('/ulasan_buku', [UlasanBukuController::class, 'index'])->name('ulasan_buku');
+Route::get('/ulasan_buku/input', [UlasanBukuController::class, 'input'])->name('ulasan_buku/input');
+Route::post('/ulasan_buku/create', [UlasanBukuController::class, 'store'])->name('ulasan_buku-create');
+Route::get('/ulasan_buku/edit/{id}', [UlasanBukuController::class, 'edit'])->name('ulasan_buku_edit');
+Route::put('/ulasan_buku/update/{id}', [UlasanBukuController::class, 'update'])->name('ulasan_buku_update');
+Route::delete('/ulasan_buku/destroy/{id}', [UlasanBukuController::class, 'destroy'])->name('ulasan_buku_destroy');
 
 
 //pemijaman

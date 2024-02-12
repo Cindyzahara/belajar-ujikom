@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\UlasanBuku;
-
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class UlasanBukuController extends Controller
 {
@@ -13,10 +13,31 @@ class UlasanBukuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    //  public function index()
+    //  {
+    //      $ulasanbuku = UlasanBuku::with('user','buku')->orderBy('id','desc')->get();
+    //      return view('ulasan_buku.index', compact('ulasan_buku'));
+    //  }
+
     public function index()
     {
-        return view('ulasan_buku.index');
+        $ulasanbuku = UlasanBuku::with('user','buku')->orderBy('id','desc')->get();
+        return view('ulasan_buku.index', compact('ulasanbuku'));
     }
+     
+ 
+     public function input(Request $request)
+     {
+         return view("ulasan_buku.formInput");
+     }
+ 
+
+    // public function index()
+    // {
+    //     $ulasanbuku = UlasanBuku::all{};
+    //     return view('ulasan_buku.index');
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -36,8 +57,16 @@ class UlasanBukuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        UlasanBuku::create([
+            'user_id' => $request->user_id,
+            'buku_id' => $request->buku_id,
+            'ulasan' => $request->ulasan,
+            'rating' => $request->rating,
+        ]);
+
+        return redirect()->route('ulasan_buku')->with('success', 'Data berhasil disimpan');
     }
+
 
     /**
      * Display the specified resource.
