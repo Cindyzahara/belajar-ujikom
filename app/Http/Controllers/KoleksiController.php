@@ -21,7 +21,7 @@ class KoleksiController extends Controller
 
     public function input(Request $request)
     {
-        return view('koleksi.fromInput');
+        return view('koleksi.formInput');
     }
 
 
@@ -71,7 +71,7 @@ class KoleksiController extends Controller
      */
     public function edit($id)
     {
-        $koleksi = koleksi::with('user','buku')->orderBy('id','desc')->get();
+        $koleksi = Koleksi::findorfail($id);
         return view('koleksi.formEdit', compact('koleksi'));
     }
 
@@ -82,7 +82,7 @@ class KoleksiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id )
     {
         $koleksi = Koleksi::findorfail($id);
         $koleksi->update($request->all());

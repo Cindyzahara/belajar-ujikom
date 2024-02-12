@@ -1,5 +1,5 @@
 @extends('template_back.layout')
-<title> Form Edit Koleksi</title>
+<title> Form Input Koleksi</title>
 @section('isi')
 
 <!-- container opened -->
@@ -8,12 +8,12 @@
     <!-- breadcrumb -->
     <div class="breadcrumb-header justify-content-between">
         <div>
-            <h4 class="content-title mb-2">Form Edit Koleksi</h4>
+            <h4 class="content-title mb-2">Form Input Koleksi</h4>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
                     <li class="breadcrumb-item"><a href="{{route('koleksi')}}">Koleksi</a></li>
-                    <li class="breadcrumb-item text-white active">Form Edit Koleksi</li>
+                    <li class="breadcrumb-item text-white active">Form Input Koleksi</li>
                 </ol>
             </nav>
         </div>
@@ -24,7 +24,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="main-content-label mg-b-5">
-                        Form Edit Koleksi
+                        Form Input Koleksi
                     </div>
                     <p class="mg-b-20">Silahkan isi form di bawah ini dengan lengkap.</p>
                     <!-- message info -->
@@ -32,7 +32,7 @@
                     <div class="pd-10 pd-sm-20 bg-gray-100">
                         <form action="{{ route('koleksi-create')}}" method="post" enctype="multipart/form-data">
                           
-                            @csrf
+                        @csrf
                         <div class="row">
                         <div class="col-md-12">
                             <div class="row">

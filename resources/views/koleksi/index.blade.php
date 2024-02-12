@@ -81,10 +81,9 @@
                                 <td>{{$item->user->username}}</td>
                                 <td>{{$item->buku->judul}}</td>
                                 <td>
-                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="" method="POST">
-                                        @csrf
+                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');"  action="{{ route('koleksi_update', $item->id)}}" method="POST">
                                         @method('DELETE')
-                                        <a href="" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                                        <a href="{{ route('koleksi_edit', $item->id) }}" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                                         <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                                     </form>
                                 </td>
