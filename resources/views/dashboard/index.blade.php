@@ -37,15 +37,19 @@
 									</svg>
 								</div>
 								<div class="project-content">
-									<h6>Invoices</h6>
+									<h6>BUKU</h6>
 									<ul>
 										<li>
-											<strong>Processing</strong>
+											<strong>Kategori Buku</strong>
 											<span>5</span>
 										</li>
 
 										<li>
-											<strong>Paid</strong>
+											<strong>Koleksi Buku</strong>
+											<span>56</span>
+										</li>
+										<li>
+											<strong>Ulasan Buku</strong>
 											<span>56</span>
 										</li>
 									</ul>
@@ -70,18 +74,7 @@
 									</svg>
 								</div>
 								<div class="project-content">
-									<h6>Tasks</h6>
-									<ul>
-										<li>
-											<strong>Processing</strong>
-											<span>42</span>
-										</li>
-
-										<li>
-											<strong>Completed</strong>
-											<span>23</span>
-										</li>
-									</ul>
+									<h6>Data Peminjaman</h6>
 								</div>
 							</div>
 						</div>
@@ -100,18 +93,7 @@
 									</svg>
 								</div>
 								<div class="project-content">
-									<h6>Estimates</h6>
-									<ul>
-										<li>
-											<strong>Processing</strong>
-											<span>2</span>
-										</li>
-
-										<li>
-											<strong>Accepted</strong>
-											<span>16</span>
-										</li>
-									</ul>
+									<h6>Data Pengembalian</h6>
 								</div>
 							</div>
 						</div>
@@ -128,17 +110,7 @@
 									</svg>
 								</div>
 								<div class="project-content">
-									<h6>Revenue</h6>
-									<ul>
-										<li>
-											<strong>Earnings</strong>
-											<span>$15,425</span>
-										</li>
-										<li>
-											<strong>Expensive</strong>
-											<span>$8,147</span>
-										</li>
-									</ul>
+									<h6>Data Pengguna</h6>
 								</div>
 							</div>
 						</div>
@@ -160,10 +132,10 @@
 					<div class="card overflow-hidden">
 						<div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
 							<div class="d-flex justify-content-between">
-								<h4 class="card-title mg-b-10">Project Budget</h4>
+								<h4 class="card-title mg-b-10">Peminjaman</h4>
 								<i class="mdi mdi-dots-horizontal text-gray"></i>
 							</div>
-							<p class="tx-12 text-muted mb-2">The Project Budget is a tool used by project managers to estimate the total cost of a project. <a href="">Learn more</a></p>
+							<p class="tx-12 text-muted mb-2">Peminjaman sesuai dengan tanggal yang sudah sesuaikan yang sudah tertera</p>
 						</div>
 						<div class="card-body pd-y-7">
 							<div class="area chart-legend mb-0">
@@ -185,7 +157,7 @@
 								<h4 class="card-title mg-b-10">project &amp; task</h4>
 								<i class="mdi mdi-dots-horizontal text-gray"></i>
 							</div>
-							<p class="tx-12 text-muted mb-3">In project, a task is an activity that needs to be accomplished within a defined period of time or by a deadline. <a href="">Learn more</a></p>
+							<p class="tx-12 text-muted mb-3"></p>
 							<div class="table-responsive mb-0 projects-stat tx-14">
 								<table class="table table-hover table-bordered mb-0 text-md-nowrap text-lg-nowrap text-xl-nowrap  ">
 									<thead>
