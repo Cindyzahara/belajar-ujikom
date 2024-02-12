@@ -25,18 +25,18 @@
 		<thead>
 		<tr>
 			<th width="20px">No</th> 
-			<th width="20px">Nama</th>
-			<th>Buku</th>
+			<th style="text-align:center">Nama</th>
+			<th style="text-align:center">Buku</th>
 		</tr>
 		</thead>
 		<tbody>
 		@php $no=1; @endphp
-		@if(count($data))
-		@foreach($data as $dt)
+		@if(count($koleksi))
+		@foreach($koleksi as $item)
 			<tr>
-                <td>{{ $loop->iteration }}</td>
-                <td>{{$item->user->username}}</td>
-                <td>{{$item->buku->judul}}</td>
+                <td width="20px">{{ $loop->iteration }}</td>
+                <td style="text-align:center">{{$item->user->username}}</td>
+                <td style="text-align:center">{{$item->buku->judul}}</td>
 			</tr>
 		@endforeach
 		@endif

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Koleksi;
 
+use PDF;
+
 
 class KoleksiController extends Controller
 {
@@ -113,7 +115,7 @@ class KoleksiController extends Controller
         
         $koleksi = $koleksi->get();
         //meneruskan parameter ke tampilan export
-        $pdf = Pdf::loadview('koleksi.exportPdf', ['koleksi=>$koleksi']);
+        $pdf = Pdf::loadview('koleksi.exportPdf', ['koleksi'=>$koleksi]);
         $pdf->setPaper('a4', 'potrait');
         $pdf->setOption(['dpi' => 150, 'defaultFont' => 'sans-serif']);
         //set file name

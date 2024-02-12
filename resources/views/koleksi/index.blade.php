@@ -105,22 +105,14 @@
 </div>
 
 <script>
-       $(function() {
-                // formelement
-                $('.select2').select2({ width: 'resolve' });
-                
-                // init datatable.
-                $('#basic-datatable').DataTable({
-                    "paging": true,
-                    "lengthChange": true,
-                    "searching": true,
-                    "ordering": false,
-                    "info": true,
-                    "autoWidth": false,
-                    "responsive": true,
-                });
-
-            });
+      function exportPdf() {
+                // var f1 =  $('#f1').val();
+                var s = $('.whatever').val();		
+                window.open(
+                "export_pdf_koleksi?s="+s,
+                    '_blank' // <- This is what makes it open in a new window.
+                );
+            }
 </script>
     
 @endsection
