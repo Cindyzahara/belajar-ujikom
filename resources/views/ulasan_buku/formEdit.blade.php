@@ -1,5 +1,5 @@
 @extends('template_back.layout')
-<title> Form Input Ulasan Buku </title>
+<title> Form Edit Ulasan Buku </title>
 @section('isi')
 
 <!-- container opened -->
@@ -8,12 +8,12 @@
     <!-- breadcrumb -->
     <div class="breadcrumb-header justify-content-between">
         <div>
-            <h4 class="content-title mb-2">Form Input Ulasan Buku</h4>
+            <h4 class="content-title mb-2">Form Edit Ulasan Buku</h4>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
                     <li class="breadcrumb-item"><a href="{{route('ulasan_buku')}}">Data Ulasan Buku</a></li>
-                    <li class="breadcrumb-item text-white active">Form Input Ulasan Buku</li>
+                    <li class="breadcrumb-item text-white active">Form Edit Ulasan Buku</li>
                 </ol>
             </nav>
         </div>
@@ -24,15 +24,15 @@
             <div class="card">
                 <div class="card-body">
                     <div class="main-content-label mg-b-5">
-                        Form Input Data Ulasan Buku
+                        Form Edit Data Ulasan Buku
                     </div>
                     <p class="mg-b-20">Silahkan isi form di bawah ini dengan lengkap.</p>
                     <!-- message info -->
                     @include('_component.message')
                     <div class="pd-10 pd-sm-20 bg-gray-100">
-                        <form action="{{ route('ulasan_buku-create')}}" method="post" enctype="multipart/form-data">
-                          
-                            @csrf
+                        <form action="{{ route('ulasan_buku_update', $ulasanbuku->id)}}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
                         <div class="row">
                         <div class="col-md-12">
                             <div class="row">
@@ -80,7 +80,7 @@
                                             <label class="form-label mg-b-0">User </label>
                                         </div>
                                         <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                            <input class="form-control" placeholder="" type="date" name="user" value="{{old('user')}}">
+                                            <input class="form-control" placeholder="" type="date" name="user_id" value="{{old('user')}}">
                                         </div>
                                     </div>
                                     <div class="row row-xs align-items-center mg-b-20">

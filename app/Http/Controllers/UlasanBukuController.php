@@ -87,7 +87,8 @@ class UlasanBukuController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ulasanbuku = UlasanBuku::findorfail($id);
+        return view('ulasan_buku.formEdit', compact('ulasanbuku'));
     }
 
     /**
@@ -99,8 +100,12 @@ class UlasanBukuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $ulasanbuku = UlasanBuku::findorfail($id);
+        $ulasanbuku->update($request->all());
+
+        return redirect()->route('ulasan_buku')->with('success', 'Data berhasil diupdate');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -110,6 +115,10 @@ class UlasanBukuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $ulasanbuku = UlasanBuku::findorfail($id);
+
+        $ulasanbuku->delete();
+
+        return redirect()->route('ulasan_buku')->with('success', 'Data berhasil dihapus');
     }
 }

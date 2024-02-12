@@ -86,13 +86,14 @@
                                 <td>{{ $item->ulasan}}</td>
                                 <td>{{ $item->rating}}</td>
                                 <td>
-                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <a href="" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
-                                        <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
-                                    </form>
+                                <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('ulasan_buku_destroy', $item->id)}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <a href="{{ route('ulasan_buku_edit', $item->id)}}" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                                            <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                        </form>
                                 </td>
+                                
                             </tr>
                             @endforeach
                         </tbody>
