@@ -72,4 +72,6 @@ Route::get('/koleksi/input', [KoleksiController::class, 'input'])->name('koleksi
 Route::post('/koleksi/store', [KoleksiController::class, 'store'])->name('koleksi/store');
 Route::get('/koleksi/edit/{id}', [KoleksiController::class, 'edit'])->name('koleksi_edit');
 Route::put('/koleksi/update/{id}', [KoleksiController::class, 'update'])->name('koleksi_update');
+Route::delete('/koleksi/destroy/{id}', [KoleksiController::class, 'destroy'])->name('koleksi_destroy');
+
 

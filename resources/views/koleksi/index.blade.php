@@ -68,20 +68,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @php $no=1; @endphp --}}
+                           
                             @foreach ($koleksi as $item)
-                            {{-- @php 
-                             $koleksi = DB::table('users')->select('*')->orderBy('username','ASC')->get(); 
-                            @endphp --}}
-                            {{-- @php 
-                             $buku = DB::table('buku')->select('*')->orderBy('judul','ASC')->get(); 
-                            @endphp --}}
+
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{$item->user->username}}</td>
                                 <td>{{$item->buku->judul}}</td>
                                 <td>
-                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');"  action="{{ route('koleksi_update', $item->id)}}" method="POST">
+                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');"  action="{{ route('koleksi_destroy', $item->id)}}" method="POST">
+                                        @csrf
                                         @method('DELETE')
                                         <a href="{{ route('koleksi_edit', $item->id) }}" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                                         <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
