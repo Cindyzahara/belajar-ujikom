@@ -1,7 +1,3 @@
-@php
-$Konversi = new \App\Helpers\Konversi; //panggil no static function
-$Tanggal = new \App\Helpers\Tanggal; //panggil no static function
-@endphp
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,26 +24,19 @@ $Tanggal = new \App\Helpers\Tanggal; //panggil no static function
 	<table class='table table-bordered'>
 		<thead>
 		<tr>
-			<th>No</th> 
-			<th>Nama</th>
-			<th>Email</th>
-			<th>Hak Akses</th> 
-			<th>Waktu Input</th> 
+			<th width="20px">No</th> 
+			<th width="20px">Nama</th>
+			<th>Buku</th>
 		</tr>
 		</thead>
 		<tbody>
 		@php $no=1; @endphp
 		@if(count($data))
 		@foreach($data as $dt)
-			@php 
-			$dbKategori=DB::table('tm_kategoribarang')->select('*')->where('id','=',$dt->kategori_id)->first();
-			@endphp
 			<tr>
-				<td>{{$no++}}</td>
-				<td>{{$dt->name??''}}</td>
-				<td>{{$dt->email??''}}</td>
-				<td>{{$dt->namerole??''}}</td>
-				<td>{{isset($dt->created_at)?$Tanggal->inddatetime($dt->created_at??'',' '):''}}</td>
+                <td>{{ $loop->iteration }}</td>
+                <td>{{$item->user->username}}</td>
+                <td>{{$item->buku->judul}}</td>
 			</tr>
 		@endforeach
 		@endif

@@ -73,5 +73,6 @@ Route::post('/koleksi/store', [KoleksiController::class, 'store'])->name('koleks
 Route::get('/koleksi/edit/{id}', [KoleksiController::class, 'edit'])->name('koleksi_edit');
 Route::put('/koleksi/update/{id}', [KoleksiController::class, 'update'])->name('koleksi_update');
 Route::delete('/koleksi/destroy/{id}', [KoleksiController::class, 'destroy'])->name('koleksi_destroy');
+Route::get('/export_pdf_koleksi', [KoleksiController::class, 'export_pdf'])->name('koleksi.export_pdf');
 
 

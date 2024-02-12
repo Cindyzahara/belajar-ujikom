@@ -104,4 +104,21 @@ class KoleksiController extends Controller
 
         return redirect()->route('koleksi')->with('success', 'Data berhasil dihapus');
     }
+
+
+    //untuk mengexport data atau tampilan export
+    public function export_pdf(Request $request)
+    {
+        $koleksi = Koleksi::select('*');
+        
+        $koleksi = $koleksi->get();
+        //meneruskan parameter ke tampilan export
+        $pdf = Pdf::loadview('koleksi.exportPdf', ['koleksi=>$koleksi']);
+        $pdf->setPaper('a4', 'potrait');
+        $pdf->setOption(['dpi' => 150, 'defaultFont' => 'sans-serif']);
+        //set file name
+        $filename = date('YmdHis') . '_koleksi';
+        //untuk mendownload file pdf
+        return $pdf->download($filename.'.pdf');
+    }
 }
