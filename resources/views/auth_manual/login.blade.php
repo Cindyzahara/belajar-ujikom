@@ -45,7 +45,7 @@
 					</form>
 				</div>
 				<div class="main-signup-footer mg-t-10">
-					<p>Already have an account? <a href="page-signin.html">Sign In</a></p>
+					<p>Already have an account? <a href="{{ route('register')}}">Registrasi</a></p>
 				</div>
 				</div>
 			</div>
