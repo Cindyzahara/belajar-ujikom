@@ -58,7 +58,6 @@
 							<label>Role</label>
 							<select class="form-control" name="role" >
 								<option value="">Pilih Hak Akses </option>
-								<option value="administrator"> Administrator</option>
 								<option value="peminjam">Peminjam</option>
 							</select>
 						</div>
