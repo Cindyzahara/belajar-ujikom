@@ -76,8 +76,8 @@
                                         <form class="d-inline"  onsubmit="return confirm('Apakah Anda Yakin Mau Menambahkan Ke Daftar Koleksi?')" action="{{ route('koleksi/store',$item->id) }}" method="post">
                                             @csrf
                                             <button type="submit" class="btn btn-sm btn-warning"><i class="fe fe-folder-plus" data-bs-toggle="tooltip" title="Koleksi Pribadi"></i></button>
+                                            <a href="{{''}}" title="Ulasan Buku" class="btn btn-success btn-sm"><i class="fa fe-clipboard"></i></a>
                                         </form>
-                                        <a href="{{''}}" title="Ulasan Buku" class="btn btn-success btn-sm"><i class="fa fe-message-circle"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -90,23 +90,17 @@
     </div>
     <!-- End Row -->
 
-    <script>
-        $(function() {
-            // formelement
-            $('.select2').select2({ width: 'resolve' });
-            
-            // init datatable.
-            $('#tbl_list').DataTable({
-                "paging": true,
-                "lengthChange": true,
-                "searching": true,
-                "ordering": false,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
-            });
 
-        });
+    <script>
+        function exportPdf() {
+                  // var f1 =  $('#f1').val();
+                  var s = $('.whatever').val();		
+                  window.open(
+                  "export_pdf_databuku?s="+s,
+                      '_blank' // <- This is what makes it open in a new window.
+                  );
+              }
     </script>
     
 @endsection
+

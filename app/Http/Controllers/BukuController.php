@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Buku;
 
+use PDF;
+
 
 class BukuController extends Controller
 {
@@ -105,5 +107,42 @@ class BukuController extends Controller
         $buku->delete();
 
         return redirect()->route('data-buku')->with('success', 'Data berhasil dihapus');
+    }
+
+    public function export_excel(Request $request)
+    {
+        //DECLARE REQUEST
+        // $f1=$request->input('f1');
+        //QUERY
+        $buku = Buku::select('*');
+
+        $buku = $buku->get();
+
+        // Meneruskan parameter ke kelas ekspor
+        $export = new BukuExportView($data);
+        
+        // Tetapkan nama file
+        $filename = date('YmdHis') . 'data-buku';
+        
+        // untuk mengunduh file excel
+        return Excel::download($export, $filename . '.xlsx');
+    }
+
+    public function export_pdf(Request $request)
+    {
+        //DECLARE REQUEST
+        //QUERY
+        $buku = Buku::select('*');
+        
+        $buku = $buku->get();
+
+        // Meneruskan parameter ke tampilan ekspor
+        $pdf = PDF::loadview('data-buku.exportPdf', ['buku'=>$buku]);
+        $pdf->setPaper('a4', 'portrait');
+        $pdf->setOption(['dpi' => 150, 'defaultFont' => 'sans-serif']);
+        // SET FILE NAME
+        $filename = date('YmdHis') . '_data-buku';
+        // untuk mendownload file pdf
+        return $pdf->download($filename.'.pdf');
     }
 }

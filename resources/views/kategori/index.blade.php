@@ -61,14 +61,14 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nama Kategori</th>
+                                <th >Nama Kategori</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($kategoriBuku as $item)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $item->nama_kategori}}</td>
+                                <td >{{ $item->nama_kategori}}</td>
                                 <td>
                                     <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="" method="POST">
                                         @csrf

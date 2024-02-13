@@ -66,23 +66,23 @@
                             <thead>
                                 <tr>
                                     <th width="20px">No</th>
-                                    <th width="20px">Username</th>
-                                    <th width="180px">Email</th>
-                                    <th>Nama Lengkap</th>
-                                    <th>Alamat</th>
-                                    <th>Hak Akses</th>
-                                    <th>Action</th>
+                                    <th style="text-align:center">Username</th>
+                                    <th style="text-align:center">Email</th>
+                                    <th style="text-align:center">Nama Lengkap</th>
+                                    <th style="text-align:center">Alamat</th>
+                                    <th style="text-align:center">Hak Akses</th>
+                                    <th style="text-align:center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                             @foreach($user as $dt)
                                 <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{$dt->username??''}}</td>
-                                    <td>{{$dt->email??''}}</td>
-                                    <td>{{$dt->namaLengkap??''}}</td>
-                                    <td>{{$dt->alamat??''}}</td>
-                                    <td>{{$dt->role??''}}</td>
+                                    <td width="20px">{{ $loop->iteration }}</td>
+                                    <td style="text-align:center">{{$dt->username??''}}</td>
+                                    <td style="text-align:center">{{$dt->email??''}}</td>
+                                    <td style="text-align:center">{{$dt->namaLengkap??''}}</td>
+                                    <td style="text-align:center">{{$dt->alamat??''}}</td>
+                                    <td style="text-align:center">{{$dt->role??''}}</td>
                                     <td>
                                         <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('data-pengguna_destroy', $dt->id)}}" method="POST">
                                             @csrf
@@ -156,17 +156,19 @@
 </div>
 <!-- /container -->
     
-@endsection
 
 <script>
-      function exportPdf() {
-                // var f1 =  $('#f1').val();
-                var s = $('.whatever').val();		
-                window.open(
-                "export_pdf_datapengguna?s="+s,
-                    '_blank' // <- This is what makes it open in a new window.
-                );
-            }
+    function exportPdf() {
+              // var f1 =  $('#f1').val();
+              var s = $('.whatever').val();		
+              window.open(
+              "export_pdf_datapengguna?s="+s,
+                  '_blank' // <- This is what makes it open in a new window.
+              );
+          }
 </script>
+
+@endsection
+
 
 

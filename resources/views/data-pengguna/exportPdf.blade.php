@@ -24,12 +24,12 @@
 	<table class='table table-bordered'>
 		<thead>
 		<tr>
-            <th width="20px">No</th>
-            <th width="20px">Username</th>
-            <th width="180px">Email</th>
-            <th>Nama Lengkap</th>
-            <th>Alamat</th>
-            <th>Hak Akses</th>
+			<th width="20px">No</th>
+			<th style="text-align:center">Username</th>
+			<th style="text-align:center">Email</th>
+			<th style="text-align:center">Nama Lengkap</th>
+			<th style="text-align:center">Alamat</th>
+			<th style="text-align:center">Hak Akses</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -37,12 +37,12 @@
 		@if(count($user))
 		@foreach($user as $dt)
 			<tr>
-				<td>{{$no++}}</td>
-                <td>{{$dt->username??''}}</td>
-                <td>{{$dt->email??''}}</td>
-                <td>{{$dt->namaLengkap??''}}</td>
-                <td>{{$dt->alamat??''}}</td>
-                <td>{{$dt->role??''}}</td>
+				<td width="20px">{{ $loop->iteration }}</td>
+				<td style="text-align:center">{{$dt->username??''}}</td>
+				<td style="text-align:center">{{$dt->email??''}}</td>
+				<td style="text-align:center">{{$dt->namaLengkap??''}}</td>
+				<td style="text-align:center">{{$dt->alamat??''}}</td>
+				<td style="text-align:center">{{$dt->role??''}}</td>
 			</tr>
 		@endforeach
 		@endif

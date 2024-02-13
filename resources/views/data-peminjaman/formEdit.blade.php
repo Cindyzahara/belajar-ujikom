@@ -1,5 +1,5 @@
 @extends('template_back.layout')
-
+<title> Form Edit Peminjam</title>
 @section('isi')
 
 <!-- container opened -->

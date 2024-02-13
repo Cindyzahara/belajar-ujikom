@@ -103,7 +103,7 @@ class PenggunaController extends Controller
     {
         $user = User::findorfail($id);
 
-        $user->delete();
+        $user->delete(); 
 
         return redirect()->route('data-pengguna')->with('success', 'Data berhasil dihapus');
     }

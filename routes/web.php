@@ -48,15 +48,18 @@ Route::post('/data-buku/create', [BukuController::class, 'store'])->name('data-b
 Route::get('/data-buku/edit/{id}', [BukuController::class, 'edit'])->name('data-buku_edit');
 Route::put('/data-buku/update/{id}', [BukuController::class, 'update'])->name('data-buku_update');
 Route::delete('/data-buku/destroy/{id}', [BukuController::class, 'destroy'])->name('data-buku_destroy');
+Route::get('/data_buku/export_excel', [BukuController::class, 'export_excel'])->name('data_buku.export_excel');
+Route::get('/export_pdf_databuku', [BukuController::class, 'export_pdf'])->name('data-buku.export_pdf');
 
 
-//pemijaman
+//route peminjaman
 Route::get('/data-peminjaman', [PeminjamController::class, 'index'])->name('data-peminjaman');
 Route::get('/data-peminjaman/input', [PeminjamController::class, 'input'])->name('data-peminjaman/input');
 Route::post('/data-peminjaman/create', [PeminjamController::class, 'store'])->name('data-peminjaman-create');
 Route::get('/data-peminjaman/edit/{id}', [PeminjamController::class, 'edit'])->name('data-peminjaman_edit');
 Route::put('/data-peminjaman/update/{id}', [PeminjamController::class, 'update'])->name('data-peminjaman_update');
 Route::delete('/data-peminjaman/destroy/{id}', [PeminjamController::class, 'destroy'])->name('data-peminjaman_destroy');
+Route::get('/export_pdf_datapeminjaman', [PeminjamController::class, 'export_pdf'])->name('data-peminjaman.export_pdf');
 
 //pengguna
 Route::get('/data-pengguna', [PenggunaController::class, 'index'])->name('data-pengguna');
@@ -71,7 +74,6 @@ Route::get('/export_pdf_datapengguna', [PenggunaController::class, 'export_pdf']
 Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori');
 Route::get('/kategori/input', [KategoriController::class, 'input'])->name('kategori_input');
 Route::post('/kategori/store', [KategoriController::class, 'store'])->name('kategori/store');
-
 
 Route::get('/ulasanBuku', [UlasanBukuController::class, 'index'])->name('ulasanBuku');
 
