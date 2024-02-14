@@ -80,8 +80,8 @@ Route::get('/ulasanBuku', [UlasanBukuController::class, 'index'])->name('ulasanB
 //koleksi pribadi
 Route::get('/koleksi', [KoleksiController::class, 'index'])->name('koleksi');
 Route::get('/koleksi/input', [KoleksiController::class, 'input'])->name('koleksi/input');
-Route::post('/koleksi/store{id}', [KoleksiController::class, 'store'])->name('koleksi/store');
-Route::get('/koleksi/edit/{id}', [koleksiController::class, 'edit'])->name('koleksi_edit');
-Route::post('/koleksi/create', [KoleksiController::class, 'store'])->name('koleksi-create');
-
+Route::post('/koleksi/store', [KoleksiController::class, 'store'])->name('koleksi/store');
+Route::get('/koleksi/edit/{id}', [KoleksiController::class, 'edit'])->name('koleksi_edit');
+Route::put('/koleksi/update/{id}', [KoleksiController::class, 'update'])->name('koleksi_update');
+Route::delete('/koleksi/destroy/{id}', [KoleksiController::class, 'destroy'])->name('koleksi_destroy');
 
