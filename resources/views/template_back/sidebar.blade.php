@@ -59,7 +59,7 @@
                             <li class="side-menu__label1"><a href="javascript:void(0);">Data Buku</a></li>
                             <li><a class="slide-item" href="{{ route('data-buku')}}">Data Buku</a></li>
                             <li><a class="slide-item" href="{{ route('kategori')}}">Kategori Buku</a></li>
-                            <li><a class="slide-item" href="">Koleksi Pribadi</a></li>
+                            <li><a class="slide-item" href="{{ route('koleksi-pribadi')}}">Koleksi Pribadi</a></li>
                             <li><a class="slide-item" href="{{ route('ulasan_buku')}}">Ulasan Buku</a></li>
                         </ul>
                     </li>
@@ -71,6 +71,10 @@
                     </li>
                     <li class="slide">
                         <a class="side-menu__item" href="{{ route('ulasan_buku') }}"><i class="side-menu__icon fe fe-user"></i></i><span class="side-menu__label">Ulasan Buku</span></a>
+                    </li>
+                    </li>
+                    <li class="slide">
+                        <a class="side-menu__item" href="{{ route('koleksi-pribadi') }}"><i class="side-menu__icon fe fe-user"></i></i><span class="side-menu__label">Koleksi Pribadi</span></a>
                     </li>
                 </ul>
 

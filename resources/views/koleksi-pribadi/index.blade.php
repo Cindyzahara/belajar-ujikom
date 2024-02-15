@@ -1,16 +1,16 @@
 @extends('template_back.layout')
-<title> Data Peminjam </title>
+<title> Koleksi Pribadi </title>
 @section('isi')
 
  <!-- breadcrumb -->
  <div class="breadcrumb-header justify-content-between">
     <div>
-        <h4 class="content-title mb-2">Form Data peminjaman</h4>
+        <h4 class="content-title mb-2">Form Koleksi Pribadi</h4>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="{{route('data-peminjaman')}}">Data peminjaman</a></li>
-                <li class="breadcrumb-item text-white active">Form Data Peminjaman</li>
+                <li class="breadcrumb-item"><a href="{{route('koleksi-pribadi')}}">Koleksi Pribadi</a></li>
+                <li class="breadcrumb-item text-white active">Form Koleksi Pribadi</li>
             </ol>
         </nav>
     </div>
@@ -24,11 +24,11 @@
             <div class="pd-t-10 pd-s-10 pd-e-10 bg-white bd-b">
                 <div class="row">
                     <div class="col-md-6">
-                        <h4 class="card-title mg-b-10">Data peminjaman</h4>
+                        <h4 class="card-title mg-b-10">Koleksi Pribadi</h4>
                     </div>
                     <div class="col-md-6">
                         <div class="d-flex my-auto btn-list justify-content-end">
-                            <a href="{{ route('data-peminjaman/input')}}" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah</a>
+                            <a href="{{ route('koleksi-pribadi/input')}}" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah</a>
                              <button onclick="formImport()" class="btn btn-sm btn-secondary"><i class="fa fa-upload me-2"></i> Import</button>
                             <div class="dropdown">
                                 <button type="button" class="btn btn-sm btn-success dropdown-toggle" data-bs-toggle="dropdown">
@@ -63,17 +63,14 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nama</th>
+                                <th>User</th>
                                 <th>Buku</th>
-                                <th>Tanggal Peminjaman</th>
-                                <th>Tanggal Pengembalian</th>
-                                <th>Status Peminjaman</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <!-- {{-- @php $no=1; @endphp --}} -->
-                            @foreach ($peminjaman as $item)
+                            @foreach ($koleksipribadi as $item)
                             <!-- {{-- @php 
                              $peminjaman = DB::table('users')->select('*')->orderBy('username','ASC')->get(); 
                             @endphp --}}
@@ -84,17 +81,15 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{$item->user->username}}</td>
                                 <td>{{$item->buku->judul}}</td>
-                                <td>{{ $item->TaggalPeminjaman}}</td>
-                                <td>{{ $item->TaggalPengembalian}}</td>
-                                <td>{{ $item->StatusPeminjaman}}</td>
                                 <td>
-                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <a href="" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
-                                        <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
-                                    </form>
+                                <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('koleksi-pribadi_destroy', $item->id)}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <a href="{{ route('koleksi-pribadi_edit', $item->id)}}" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                                            <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                        </form>
                                 </td>
+                                
                             </tr>
                             @endforeach
                         </tbody>

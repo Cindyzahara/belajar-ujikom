@@ -30,12 +30,14 @@ use App\Http\Controllers\PenggunaController;
 //     return view('dashboard/index');
 // });
 
+//validasi
 Route::get('/', [LoginController::class, 'index']);
-
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login');
 Route::match(['get','post'],'/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+//buku
 Route::get('/data-buku', [BukuController::class, 'index'])->name('data-buku');
 Route::get('/data-buku/input', [BukuController::class, 'input'])->name('data-buku/input');
 Route::post('/data-buku/create', [BukuController::class, 'store'])->name('data-buku-create');
@@ -51,6 +53,15 @@ Route::post('/ulasan_buku/create', [UlasanBukuController::class, 'store'])->name
 Route::get('/ulasan_buku/edit/{id}', [UlasanBukuController::class, 'edit'])->name('ulasan_buku_edit');
 Route::put('/ulasan_buku/update/{id}', [UlasanBukuController::class, 'update'])->name('ulasan_buku_update');
 Route::delete('/ulasan_buku/destroy/{id}', [UlasanBukuController::class, 'destroy'])->name('ulasan_buku_destroy');
+
+
+//koleksi pribadi
+Route::get('/koleksi-pribadi', [KoleksiPribadiController::class, 'index'])->name('koleksi-pribadi');
+Route::get('/koleksi-pribadi/input', [KoleksiPribadiController::class, 'input'])->name('koleksi-pribadi/input');
+Route::post('/koleksi-pribadi/create', [KoleksiPribadiController::class, 'store'])->name('koleksi-pribadi-create');
+Route::get('/koleksi-pribadi/edit/{id}', [KoleksiPribadiController::class, 'edit'])->name('koleksi-pribadi_edit');
+Route::put('/koleksi-pribadi/update/{id}', [KoleksiPribadiController::class, 'update'])->name('koleksi-pribadi_update');
+Route::delete('/koleksi-pribadi/destroy/{id}', [KoleksiPribadiController::class, 'destroy'])->name('koleksi-pribadi_destroy');
 
 
 //pemijaman
@@ -70,3 +81,4 @@ Route::delete('/data-pengguna/destroy/{id}', [PenggunaController::class, 'destro
 Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori');
 Route::get('/kategori/input', [KategoriController::class, 'input'])->name('kategori_input');
 Route::post('/kategori/store', [KategoriController::class, 'store'])->name('kategori/store');
+
