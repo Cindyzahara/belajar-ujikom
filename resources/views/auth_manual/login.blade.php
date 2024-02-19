@@ -1,5 +1,5 @@
 @extends('template_auth.layout')
-
+<title> Login </title>
 @section('isi')
 
 <!-- page -->

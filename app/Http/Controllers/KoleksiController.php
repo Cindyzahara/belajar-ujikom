@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\UlasanBuku;
+use App\Models\Koleksi;
 
 
-class UlasanBukuController extends Controller
+class KoleksiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,15 @@ class UlasanBukuController extends Controller
      */
     public function index()
     {
-        return view('ulasan_buku.index');
+        $koleksi = Koleksi::with('user','buku')->orderBy('id','desc')->get();
+        return view('koleksi.index', compact('koleksi'));
     }
+
+    public function input(Request $request)
+    {
+        return view('koleksi.fromInput');
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -34,9 +41,16 @@ class UlasanBukuController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        $cekuser = auth()->user()->id;
+        
+        Koleksi::create([
+            'user_id' => $cekuser,
+            'buku_id' => $id,
+        ]);
+
+        return redirect()->route('koleksi')->with('success', 'Data berhasil disimpan');
     }
 
     /**
@@ -58,7 +72,8 @@ class UlasanBukuController extends Controller
      */
     public function edit($id)
     {
-        //
+        $koleksi = koleksi::with('user','buku')->orderBy('id','desc')->get();
+        return view('koleksi.formEdit', compact('koleksi'));
     }
 
     /**
@@ -70,7 +85,10 @@ class UlasanBukuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $koleksi = Koleksi::findorfail($id);
+        $koleksi->update($request->all());
+
+        return redirect()->route('koleksi')->with('success', 'Data berhasil diupdate');
     }
 
     /**
@@ -81,6 +99,10 @@ class UlasanBukuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $koleksi = Koleksi::findorfail($id);
+
+        $koleksi->delete();
+
+        return redirect()->route('koleksi')->with('success', 'Data berhasil dihapus');
     }
 }

@@ -6,6 +6,8 @@ use App\Models\Peminjaman;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
+use PDF;
+
 class PeminjamController extends Controller
 {
     /**
@@ -15,7 +17,9 @@ class PeminjamController extends Controller
      */
     public function index()
     {
-        $peminjaman = Peminjaman::with('user','buku')->orderBy('id','desc')->get();
+        //memanggil data relasi antarv tabel di model
+        //programa memesan id dan atribut lain nya dengan menggunakan desc/asc
+        $peminjaman = Peminjaman::with('user', 'buku')->orderBy('id', 'desc')->get();
         return view('data-peminjaman.index', compact('peminjaman'));
     }
 
@@ -37,6 +41,7 @@ class PeminjamController extends Controller
      */
     public function store(Request $request)
     {
+        //data untuk menambhkan ke halaman database yang nanti di panggil di view
         Peminjaman::create([
             'user_id' => $request->user_id,
             'buku_id' => $request->buku_id,
@@ -46,7 +51,7 @@ class PeminjamController extends Controller
         ]);
 
         
-
+        //membuat alert succes ketika berhasil tersimpan ke halaman index
         return redirect()->route('data-peminjaman')->with('success', 'Data berhasil disimpan');
     }
 
@@ -69,7 +74,9 @@ class PeminjamController extends Controller
      */
     public function edit($id)
     {
-        //
+        //pengeditan
+        $peminjaman = Peminjaman::findorfail($id);
+        return view('data-peminjaman.formEdit', compact('peminjaman'));
     }
 
     /**
@@ -81,7 +88,11 @@ class PeminjamController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //untuk data yang sudah di edit lalu di update ke halaman index pemijaman
+        $peminjaman = Peminjaman::findorfail($id);
+        $peminjaman->update($request->all());
+
+        return redirect()->route('data-peminjaman')->with('success', 'Data berhasil diupdate');
     }
 
     /**
@@ -92,6 +103,29 @@ class PeminjamController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // untuk menghapus
+        $peminjaman = Peminjaman::findorfail($id);
+
+        $peminjaman->delete();
+
+        return redirect()->route('data-peminjaman')->with('success', 'Data berhasil dihapus');
+    }
+
+    public function export_pdf(Request $request)
+    {
+        //DECLARE REQUEST
+        //QUERY
+        $peminjaman = Peminjaman::select('*');
+        
+        $peminjaman = $peminjaman->get();
+
+        // Meneruskan parameter ke tampilan ekspor
+        $pdf = PDF::loadview('data-peminjaman.exportPdf', ['peminjaman'=>$peminjaman]);
+        $pdf->setPaper('a4', 'portrait');
+        $pdf->setOption(['dpi' => 150, 'defaultFont' => 'sans-serif']);
+        // SET FILE NAME
+        $filename = date('YmdHis') . '_data-peminjaman';
+        // untuk mendownload file pdf
+        return $pdf->download($filename.'.pdf');
     }
 }
