@@ -6,6 +6,13 @@ use App\Models\UlasanBuku;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
+//LOAD PACKAGE PDF
+use PDF;
+
+
+//LOAD HELPER
+use Tanggal;
+
 class UlasanBukuController extends Controller
 {
     /**
@@ -121,4 +128,23 @@ class UlasanBukuController extends Controller
 
         return redirect()->route('ulasan_buku')->with('success', 'Data berhasil dihapus');
     }
+
+    public function export_pdf(Request $request)
+    {
+        //DECLARE REQUEST
+        //QUERY
+        $ulasanbuku = UlasanBuku::select('*');
+        
+        $ulasanbuku = $ulasanbuku->get();
+
+        // Meneruskan parameter ke tampilan ekspor
+        $pdf = PDF::loadview('ulasan_buku.exportPdf', ['ulasanbuku'=>$ulasanbuku]);
+        $pdf->setPaper('a4', 'portrait');
+        $pdf->setOption(['dpi' => 150, 'defaultFont' => 'sans-serif']);
+        // SET FILE NAME
+        $filename = date('YmdHis') . '_ulasan_buku';
+        // untuk mendownload file pdf
+        return $pdf->download($filename.'.pdf');
+    }
+    
 }

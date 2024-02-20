@@ -63,7 +63,7 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>User</th>
+                                <th>User</th> 
                                 <th>Buku</th>
                                 <th>Ulasan</th>
                                 <th>Rating</th>
@@ -122,6 +122,21 @@
                 });
 
             });
+
+            function reload_table(){
+                var f1 =  $('#f1').val();	
+                window.location.href="ulasan_buku?f1="+f1;
+            }
+
+
+            function exportPdf() {
+                var f1 =  $('#f1').val();
+                var s = $('.whatever').val();		
+                window.open(
+                "ulasan_buku/export_pdf?s="+s+"&f1="+f1,
+                    '_blank' // <- This is what makes it open in a new window.
+                );
+            }
 </script>
     
 @endsection

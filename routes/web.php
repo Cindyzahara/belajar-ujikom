@@ -53,6 +53,7 @@ Route::post('/ulasan_buku/create', [UlasanBukuController::class, 'store'])->name
 Route::get('/ulasan_buku/edit/{id}', [UlasanBukuController::class, 'edit'])->name('ulasan_buku_edit');
 Route::put('/ulasan_buku/update/{id}', [UlasanBukuController::class, 'update'])->name('ulasan_buku_update');
 Route::delete('/ulasan_buku/destroy/{id}', [UlasanBukuController::class, 'destroy'])->name('ulasan_buku_destroy');
+Route::get('/ulasan_buku/export_pdf', [UlasanBukuController::class, 'export_pdf'])->name('ulasan_buku.export_pdf');
 
 
 //koleksi pribadi
