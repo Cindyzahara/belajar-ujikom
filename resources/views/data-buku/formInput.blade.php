@@ -69,7 +69,6 @@
                                             <input class="form-control" placeholder="" type="text" name="tahun_terbit" value="{{old('tahun_terbit')}}">
                                         </div>
                                     </div>
-
                                     </div>
                                 </div>
                             </div>

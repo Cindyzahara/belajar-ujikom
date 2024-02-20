@@ -19,27 +19,18 @@
 <div class="row row-sm">
     <div class="col-xl-12 col-lg-12 col-sm-12 col-md-12">
         <div class="card">
-            
             <div class="pd-t-10 pd-s-10 pd-e-10 bg-white bd-b">
                 <div class="row">
                     <div class="col-md-6">
                         <h4 class="card-title mg-b-10">Kategori Buku</h4>
                     </div>
+                    @if (auth()->user()->role == "administrator")
                     <div class="col-md-6">
                         <div class="d-flex my-auto btn-list justify-content-end">
                             <a href="{{ route('kategori_input')}}" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah</a>
-                             <button onclick="formImport()" class="btn btn-sm btn-secondary"><i class="fa fa-upload me-2"></i> Import</button>
-                            <div class="dropdown">
-                                <button type="button" class="btn btn-sm btn-success dropdown-toggle" data-bs-toggle="dropdown">
-                                    <i class="fa fa-download me-2"></i>Export
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="javascript:void(0)" onclick="exportExcel()">Excel</a>
-                                    <a class="dropdown-item" href="javascript:void(0)" onclick="exportPdf()">PDF</a>
-                                </div>
-                            </div> 
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
             <div class="card-body">
@@ -55,7 +46,7 @@
                         </select>
                     </div>
                 </div> --}}
-                <hr>
+              
                 <div class="table-responsive">
                     <table id="tbl_list" class="table table-sm table-striped table-bordered tx-14" width="100%">
                         <thead>

@@ -25,11 +25,12 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h4 class="card-title mg-b-10">Data peminjaman</h4>
-                    </div>
-                    <div class="col-md-6">
+                    </div>    
+                    <div class="col-md-6 mt-3" >
                         <div class="d-flex my-auto btn-list justify-content-end">
                             {{-- memanggil data dari controller class input --}}
                             <a href="{{ route('data-peminjaman/input')}}" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah</a>
+                            @if (auth()->user()->role== "administrator")
                              <button onclick="formImport()" class="btn btn-sm btn-secondary"><i class="fa fa-upload me-2"></i> Import</button>
                             <div class="dropdown">
                                 <button type="button" class="btn btn-sm btn-success dropdown-toggle" data-bs-toggle="dropdown">
@@ -40,6 +41,7 @@
                                     <a class="dropdown-item" href="javascript:void(0)" onclick="exportPdf()">PDF</a>
                                 </div>
                             </div> 
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -47,19 +49,8 @@
             <div class="card-body">
                 <!-- message info -->
                 @include('_component.message')
-                <div class="row">
-                    <div class="col-md-3">
-                        <label class="form-label mt-2 mb-0">Kategori Buku</label> 
-                        <select id="f1" class="form-control select2" onchange="reload_table()">
-                            @php $db = DB::table('buku')->select('*')->orderBy('judul','ASC')->get(); @endphp
-                            <option value="">=== semua ===</option>
-                            @foreach($db as $key => $val)
-                            <option value="{{$val->id}}" @if(request()->get('f1')==$val->id) selected @endif>{{$val->judul}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                <hr>
-                <div class="table-responsive">
+              {{-- <br> --}}
+                <div class="table-responsive mt-2">
                     <table id="tbl_list" class="table table-sm table-striped table-bordered tx-14" width="100%">
                         <thead>
                             <tr>

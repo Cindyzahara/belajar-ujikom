@@ -18,7 +18,6 @@
 						<p class="mb-5">Untuk tetap terhubung dengan kami,
 							silahkan masuk dengan akun anda 
 						</p>
-						<a href="index.html" class="btn btn-success">Learn More</a>
 					</div>
 				</div>
 			</div>
@@ -28,7 +27,7 @@
 					<div class="px-0 col-12 mb-2">
                         @include('_component.message')
                     </div>
-					<h4>Please Register with Azira</h4>
+					<h4>Please Login</h4>
 					<form method="POST" action="{{ route('login')}}">
 						@csrf
 						<div class="form-group">
@@ -45,7 +44,7 @@
 					</form>
 				</div>
 				<div class="main-signup-footer mg-t-10">
-					<p>Already have an account? <a href="page-signin.html">Sign In</a></p>
+					<p>Already have an account? <a href="{{ route('register')}}">Registrasi</a></p>
 				</div>
 				</div>
 			</div>

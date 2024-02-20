@@ -46,7 +46,7 @@ class PenggunaController extends Controller
         User::create([
             'username' => $request->username,
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => bcrypt($request->password),
             'namaLengkap' => $request->namaLengkap,
             'alamat' => $request->alamat,
             'role' => $request->role,

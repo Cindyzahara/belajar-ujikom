@@ -72,7 +72,7 @@ class KoleksiController extends Controller
      */
     public function edit($id)
     {
-        $koleksi = koleksi::with('user','buku')->orderBy('id','desc')->get();
+        $koleksi = Koleksi::with('user','buku')->orderBy('id','desc')->get();
         return view('koleksi.formEdit', compact('koleksi'));
     }
 

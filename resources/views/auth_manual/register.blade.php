@@ -1,5 +1,6 @@
-
-
+@extends('template_auth.layout')
+<title> Register </title>
+@section('isi')
 
 	<!-- main-signin-wrapper -->
 	<div class="my-auto page page-h">
@@ -74,3 +75,4 @@
 	<!-- page closed -->
 	
 @endsection
+	

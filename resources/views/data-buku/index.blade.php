@@ -19,14 +19,15 @@
 
 	<!-- Row -->
     <div class="row row-sm">
-        <div class="col-lg-12">
+        <div class="col-lg-12" >
             <div class="card">
                 <div class="pd-t-10 pd-s-10 pd-e-10 bg-white bd-b">
                     @include('_component.message')
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 mt-3">
                             <h4 class="card-title mg-b-10">Data Buku</h4>
                         </div>
+                        @if (auth()->user()->role=="administrator")
                         <div class="col-md-6">
                             <div class="d-flex my-auto btn-list justify-content-end">
                                 <a href="{{ route('data-buku/input')}}" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah</a>
@@ -42,11 +43,12 @@
                                 </div> 
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
                 <div class="card-body">
                     @include('_component.message')
-                    <div class="table-responsive">
+                    <div class="table-responsive mt-2">
                         <table class="table border-top-0 table-bordered text-nowrap border-bottom" id="basic-datatable">
                             <thead>
                                 <tr>
@@ -55,7 +57,9 @@
                                     <th style="text-align:center">Penulis</th>
                                     <th style="text-align:center">Penerbit</th>
                                     <th style="text-align:center">Tahun Terbit</th>
+                                    @if (auth()->user()->role=="administrator")
                                     <th style="text-align:center">Action</th>
+                                    @endif
                                 </tr>
                             </thead>
                             <tbody>
@@ -66,6 +70,7 @@
                                     <td style="text-align:center">{{ $item->penulis}}</td>
                                     <td style="text-align:center">{{ $item->penerbit}}</td>
                                     <td style="text-align:center">{{ $item->tahun_terbit}}</td>
+                                    @if (auth()->user()->role=="administrator")
                                     <td>
                                         <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('data-buku_destroy', $item->id)}}" method="POST">
                                             @csrf
@@ -79,6 +84,7 @@
                                             <a href="{{''}}" title="Ulasan Buku" class="btn btn-success btn-sm"><i class="fa fe-clipboard"></i></a>
                                         </form>
                                     </td>
+                                    @endif
                                 </tr>
                                 @endforeach
                             </tbody>
