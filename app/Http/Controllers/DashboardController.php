@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Buku;
+use App\Models\Peminjaman;
+use App\Models\User;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -13,7 +16,15 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+        $total_buku = Buku::count();
+        $total_peminjaman = Peminjaman::count();
+        $total_user = user::count();
+        $total_kategori = kategori::count();
+
+        return view('dashboard.index')->with('total_buku', $total_buku)
+        ->with('total_peminjaman', $total_peminjaman)
+        ->with('total_user', $total_user)
+        ->with('total_kategori', $total_kategori);
     }
 
     /**
