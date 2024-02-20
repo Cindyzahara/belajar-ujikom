@@ -2,13 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\KoleksiController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PeminjamController;
+use App\Http\Controllers\PenggunaController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UlasanBukuController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\PenggunaController;
-use App\Http\Controllers\KoleksiController;
 
 
 /*60_+
@@ -84,4 +85,9 @@ Route::post('/koleksi/store', [KoleksiController::class, 'store'])->name('koleks
 Route::get('/koleksi/edit/{id}', [KoleksiController::class, 'edit'])->name('koleksi_edit');
 Route::put('/koleksi/update/{id}', [KoleksiController::class, 'update'])->name('koleksi_update');
 Route::delete('/koleksi/destroy/{id}', [KoleksiController::class, 'destroy'])->name('koleksi_destroy');
+//registrasi
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'store'])->name('register');
+
+
 
