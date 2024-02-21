@@ -53,32 +53,32 @@
                             <thead>
                                 <tr>
                                     <th width="20px">No</th>
-                                    <th style="text-align:center">Judul</th>
-                                    <th style="text-align:center">Penulis</th>
-                                    <th style="text-align:center">Penerbit</th>
-                                    <th style="text-align:center">Tahun Terbit</th>
+                                    <th style="text-align:center" width="50px">Judul</th>
+                                    <th style="text-align:center" width="50px">Penulis</th>
+                                    <th style="text-align:center" width="120px">Penerbit</th>
+                                    <th style="text-align:center" width="80px">Tahun Terbit</th>
                                     @if (auth()->user()->role=="administrator")
-                                    <th style="text-align:center">Action</th>
+                                    <th style="text-align:center" width="120px">Action</th>
                                     @endif
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($buku as $item)
                                 <tr>
-                                    <td style="text-align:center">{{ $loop->iteration }}</td>
-                                    <td style="text-align:center">{{ $item->judul}}</td>
-                                    <td style="text-align:center">{{ $item->penulis}}</td>
-                                    <td style="text-align:center">{{ $item->penerbit}}</td>
-                                    <td style="text-align:center">{{ $item->tahun_terbit}}</td>
+                                    <td style="text-align:center" width="20px">{{ $loop->iteration }}</td>
+                                    <td style="text-align:center" width="50px">{{ $item->judul}}</td>
+                                    <td style="text-align:center" width="50px">{{ $item->penulis}}</td>
+                                    <td style="text-align:center" width="120px">{{ $item->penerbit}}</td>
+                                    <td style="text-align:center" width="80px">{{ $item->tahun_terbit}}</td>
                                     @if (auth()->user()->role=="administrator")
-                                    <td>
+                                    <td style="text-align:center" width="120px">
                                         <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('data-buku_destroy', $item->id)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <a href="{{ route('data-buku_edit', $item->id)}}" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                                             <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash" title="Edit"></i></button>
                                         </form>
-                                        <form class="d-inline"  onsubmit="return confirm('Apakah Anda Yakin Mau Menambahkan Ke Daftar Koleksi?')" action="{{ route('koleksi/store',$item->id) }}" method="post">
+                                        <form class ="d-inline"  onsubmit="return confirm('Apakah Anda Yakin Mau Menambahkan Ke Daftar Koleksi?')" action="{{ route('koleksi/store',$item->id) }}" method="post">
                                             @csrf
                                             <button type="submit" class="btn btn-sm btn-warning"><i class="fe fe-folder-plus" data-bs-toggle="tooltip" title="Koleksi Pribadi"></i></button>
                                             <a href="{{''}}" title="Ulasan Buku" class="btn btn-success btn-sm"><i class="fa fe-clipboard"></i></a>
@@ -98,6 +98,23 @@
 
 
     <script>
+           $(function() {
+                // formelement
+                $('.select2').select2({ width: 'resolve' });
+                
+                // init datatable.
+                $('#tbl_list').DataTable({
+                    "paging": true,
+                    "lengthChange": true,
+                    "searching": true,
+                    "ordering": false,
+                    "info": true,
+                    "autoWidth": false,
+                    "responsive": true,
+                });
+
+            });
+            
         function exportPdf() {
                   // var f1 =  $('#f1').val();
                   var s = $('.whatever').val();		

@@ -30,6 +30,15 @@
 
 		<!--- Animations css --->
 		<link href="{{ asset('')}}assets/css/animate.css" rel="stylesheet">
+
+		<link rel="stylesheet" type="text/css" href="{{asset('')}}plugin/datatables/css.css">
+		<script src="{{ asset('') }}plugin/jquery-3.6.0.js"></script>
+		<script src="{{asset('')}}back/plugins/jquery/jquery.min.js"></script>
+		<!-- DataTables  -->
+		<script type="text/javascript" src="{{ asset('') }}plugin/datatables/pdf.js"></script>
+		<script type="text/javascript" src="{{ asset('') }}plugin/datatables/font.js"></script>
+		<script type="text/javascript" src="{{ asset('') }}plugin/datatables/datatables.js"></script>
+		<script type="text/javascript" src="{{ asset('') }}plugin/datatables/js/dataTables.checkboxes.min.js"></script>
 		
 
 	</head>
@@ -60,7 +69,7 @@
 			<!-- /main-content -->
 
 		<!--Sidebar-right-->
-		<div class="sidebar sidebar-right sidebar-animate">
+		{{-- <div class="sidebar sidebar-right sidebar-animate">
 			<div class="panel panel-primary card mb-0">
 				<div class="panel-body tabs-menu-body p-0 border-0">
 					<ul class="Date-time">
@@ -201,7 +210,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> --}}
 		<!--/Sidebar-right-->
 
 		<!-- Footer opened -->
@@ -217,21 +226,7 @@
 		<!--- Back-to-top --->
 		<a href="#top" id="back-to-top"><i class="las la-angle-double-up"></i></a>
 
-		 <!-- DATA TABLE JS-->
-		 <script src="{{asset('')}}assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
-		 <script src="{{asset('')}}assets/plugins/datatable/js/dataTables.bootstrap5.js"></script>
-		 <script src="{{asset('')}}assets/plugins/datatable/js/dataTables.buttons.min.js"></script>
-		 <script src="{{asset('')}}assets/plugins/datatable/js/buttons.bootstrap5.min.js"></script>
-		 <script src="{{asset('')}}assets/plugins/datatable/js/jszip.min.js"></script>
-		 <script src="{{asset('')}}assets/plugins/datatable/pdfmake/pdfmake.min.js"></script>
-		 <script src="{{asset('')}}assets/plugins/datatable/pdfmake/vfs_fonts.js"></script>
-		 <script src="{{asset('')}}assets/plugins/datatable/js/buttons.html5.min.js"></script>
-		 <script src="{{asset('')}}assets/plugins/datatable/js/buttons.print.min.js"></script>
-		 <script src="{{asset('')}}assets/plugins/datatable/js/buttons.colVis.min.js"></script>
-		 <script src="{{asset('')}}assets/plugins/datatable/dataTables.responsive.min.js"></script>
-		 <script src="{{asset('')}}assets/plugins/datatable/responsive.bootstrap5.min.js"></script>
-	 
-			 <script src="{{asset('')}}assets/js/table-data.js"></script>
+		
 		<!--- JQuery min js --->
 		<script src="{{asset('')}}assets/plugins/jquery/jquery.min.js"></script>
 
@@ -286,12 +281,27 @@
 
 		<!--themecolor js-->
 		<script src="{{asset('')}}assets/js/themecolor.js"></script>
-
+		
 		<!--swither-styles js-->
 		<script src="{{asset('')}}assets/js/swither-styles.js"></script>
-
+		
 		<!--- Custom js --->
 		<script src="{{asset('')}}assets/js/custom.js"></script>
-
+		
+		<!-- DATA TABLE JS-->
+		<script src="{{asset('')}}assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+		<script src="{{asset('')}}assets/plugins/datatable/js/dataTables.bootstrap5.js"></script>
+		<script src="{{asset('')}}assets/plugins/datatable/js/dataTables.buttons.min.js"></script>
+		<script src="{{asset('')}}assets/plugins/datatable/js/buttons.bootstrap5.min.js"></script>
+		<script src="{{asset('')}}assets/plugins/datatable/js/jszip.min.js"></script>
+		<script src="{{asset('')}}assets/plugins/datatable/pdfmake/pdfmake.min.js"></script>
+		<script src="{{asset('')}}assets/plugins/datatable/pdfmake/vfs_fonts.js"></script>
+		<script src="{{asset('')}}assets/plugins/datatable/js/buttons.html5.min.js"></script>
+		<script src="{{asset('')}}assets/plugins/datatable/js/buttons.print.min.js"></script>
+		<script src="{{asset('')}}assets/plugins/datatable/js/buttons.colVis.min.js"></script>
+		<script src="{{asset('')}}assets/plugins/datatable/dataTables.responsive.min.js"></script>
+		<script src="{{asset('')}}assets/plugins/datatable/responsive.bootstrap5.min.js"></script>
+		<script src="{{asset('')}}assets/js/table-data.js"></script>
+	 
 	</body>
 </html>
